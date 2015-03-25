@@ -27,7 +27,7 @@ timezone: 				America/New_York
 # Exclude metadata and development time dependencies (like Grunt plugins)
 exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules, docs-*.html]
 
-favicons: 	uikit/images/favicons
+favicons: 	lib/images/favicons
 css:		css
-lib:		uikit/less
+lib:		lib/less
 include: 	[base.html, modules.html, grid.html]
