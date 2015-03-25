@@ -1,0 +1,72 @@
+---
+layout: default
+title: Getting Started
+id: home
+css: pattern-guide
+---
+
+<header class="page-header">
+    <div class="-row">
+        <div class="-col12">
+            <div class="logo-soc">
+                <a href="index.html" class="-logo">Stack Overflow Careers</a>
+            </div>
+        </div>
+    </div>
+</header>
+<article id="overview">
+    <h1>{{ page.title }}</h1>
+    <p class="_large">Welcome to the <em>Stack Overflow Careers Pattern Library</em>. Within this document you'll find base styles, components, and views relating to the Stack Overflow Careers project.</p>
+
+    <h2>Purpose</h2>
+    <p>This library's purpose is to educate the Stack Overflow Careers team of the various methods available to them to achieve their various visual UI goals that help achieve a consistent, on-brand experience. In addition to an unified experience, this library will also help the team achieve the following subgoals:</p>
+    <ul>
+      <li><strong>Eliminate code redundancy</strong> by leveraging current styles or extending them to achieve new modules or views while staying on-brand.</li>
+      <li><strong>Propogate change more readily</strong> throughout the site.</li>
+      <li><strong>Create a living document</strong> that other teams, internal or external, can review to give them guidance within their projects.</li>
+    </ul>
+</article>
+<article id="lesscss-installation">
+    <h2>Installation</h2>
+    <p>The core Pattern Library file contains all the base styles you will need. This is all include within <code>all.less</code>. When creating new view-specific files, you only need to use following two files:</p>
+{% highlight scss linenos %}
+@import "less/base/_variables.less";
+@import "less/base/_mixins.less";
+{% endhighlight %}
+    <p>The <code>_variables</code> LESS file contains all color, padding, margin, z-index, and type variables. The <code>_mixins</code> LESS file contains type, gradient, and other CSS3 vendor specific calls.
+</article>
+<article id="lesscss-contributing">
+    <h2>Contributing</h2>
+    <p>Before contributing code to the repository, be sure to read the following sections so that your requests have the best chance of being merged.</p>
+    <h3>Scope</h3>
+    <p>There are three graduating levels of scope that determine where the LESS should live.</p>
+    <table class="_borders">
+        <thead>
+            <tr>
+                <th class="-col2">Scope</th>
+                <th class="-col6">Definition</th>
+                <th class="-col4">Examples</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Base</strong></td>
+                <td>Core style which is used throughout the project</td>
+                <td><code>base/_type.less</code>, <code>base/_grid.less</code>, etc.</td>
+            </tr>
+            <tr>
+                <td><strong>Modules</strong></td>
+                <td>Layouts which build on the core styles to create more complex layouts that are used within more than one view. Module LESS should be scoped to the components, leaving view-specific alterations withing the appropriate view file.</td>
+                <td><code>modules/_tabs.less</code>, <code>modules/_navigation.less</code>, etc.</td>
+            </tr>
+            <tr>
+                <td><strong>Views</strong></td>
+                <td>LESS which is specific to a section or view. It addresses overall layout. <em>Note: Folder structure here should emulate the project razor structure.</em></td>
+                <td><code>views/JobEditing/</code>, <code>views/Products</code>, etc.</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>Graduating LESS</h3>
+    <p>As a general rule, you should start with implementing your LESS in the smallest scope possible - almost always at the page level - then graduate that LESS as the scope expands. This is closest to how we develop LESS anyways.</p>
+    <p>For example, I may create icons for industries on city pages, which is very specific to one feature of Careers. The relevant LESS would live in a page-specific <code>less</code> file like <code>citypages.less</code>, even if it <em>may</em> one day go to other parts of Careers. Perhaps after a few weeks, a new feature on Careers requires those industry icons. At this point, it's best to move the relevant code from <code>citypages.less</code> and into <code>shared.less</code> which is used across the Careers project. As a final stage, we may start thinking about using industry icons in Stack Overflow Q&amp;A profiles, and this is when you should put the relevant code into a pull request for the UI Kit.</p>
+</article>

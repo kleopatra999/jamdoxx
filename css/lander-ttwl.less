@@ -1,0 +1,269 @@
+//
+//  STACK OVERFLOW CAREERS
+//  Product UI Guide
+//
+//  Created September 17, 2014
+//  Last Updated September 28, 2014
+//
+//  http://careers.stackoverflow.com/
+//  http://careers.stackoverflow.com/UIKit
+//
+//
+//  TABLE OF CONTENTS
+//
+//  $ 1  Imports
+//  $ 2  Variables
+//  $ 3  Layout
+//  $ 4  Type
+//  $ 5  Logo
+//
+//  ============================================================================
+//  $ IMPORT FILES
+//  ----------------------------------------------------------------------------
+//  -- Base Variables & Mixins
+@import "../lib/less/base/variables";
+@import "../lib/less/base/mixins";
+@import "../lib/less/modules";
+
+
+//  ============================================================================
+//  $ VARIABLES
+//  ----------------------------------------------------------------------------
+@skyline-zindex:            0;
+@color-orangeMuted:         spin(desaturate(darken(@color-orange,2%),9%),5);
+
+//  ============================================================================
+//  $ LAYOUTS
+//  ----------------------------------------------------------------------------
+html, body {
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+
+    color: @copy-color;
+    font-family: @fontFamily-sans;
+    font-size: ~"@{fontSize-base}px";
+    .fontWeight(4);
+    letter-spacing: 0;
+    .lineHeight(base);
+    text-align: left;
+}
+
+.-content {
+    margin: 0 auto;
+    width: 100%;
+    @media only screen and (min-width: (@mediaQuery-medium + 9)) { width: 1000px; }
+
+    > header { margin-bottom: 4.25em; }
+
+    .container > & { margin-top: 10em; }
+}
+
+.socBranding {
+    @media only screen and (max-width: (@mediaQuery-medium + 8)) { padding-left: 2em; }
+
+    .-logo {
+        display: block;
+        margin-top: 2em;
+        width: 270px;
+        height: 42px;
+        text-indent: -9999px;
+
+        background-image: url("../lib/images/pages/ttwl2015/logo-soc_white.png");
+        background-image: url("../lib/images/pages/ttwl2015/logo-socareers-white.svg");
+        background-repeat: no-repeat;
+        background-position: left top;
+    }
+}
+
+
+//  ============================================================================
+//  $ ADJUSTMENTS
+//  ----------------------------------------------------------------------------
+//  -- Type
+p._lead {
+    margin-bottom: 0;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    .lineHeight(tight);
+}
+
+h1._muted { color: @color-grayMid; }
+
+//  -- Badges
+@badge-color:                       @color-white;
+@badgeEmployers-background:         @color-grayMid;
+@badgeDevelopers-background:        @color-orange;
+@badgePanel-background:             spin(desaturate(darken(@color-yellow,17%),4%),-12);
+@badgeMeetup-background:            spin(lighten(@color-red,8%),-6);
+
+.badge {
+    top: -4px;
+    color: @badge-color;
+
+    &._large { .fontSize(xs); }
+
+    &.-panel        { background-color: @badgePanel-background; }
+    &.-meetup       { background-color: @badgeMeetup-background; }
+    &.-employers    { background-color: @badgeEmployers-background; }
+    &.-developers   { background-color: @badgeDevelopers-background; }
+}
+
+
+
+
+//  ============================================================================
+//  $ SPECIAL: HERO SKYLINE
+//  ----------------------------------------------------------------------------
+.ttwlHeader {
+    position: relative;
+    display: block;
+    width: 100%;
+
+    @media only screen and (min-width: (@mediaQuery-small + 1)) and (max-width: @mediaQuery-medium) { height: 460px; }
+    @media only screen and (min-width: (@mediaQuery-medium + 1)) { height: 480px; }
+
+    background-color: @color-orangeMuted;
+    background-image: url("../lib/images/pages/ttwl2015/background-orangeArrows.png");
+    background-position: center center;
+    background-repeat: repeat;
+}
+
+.heroSkyline {
+    position: relative;
+    margin-top: -10px;
+    width: 100%;
+
+    .citySkyline {
+        height: 317px;
+        position: relative;
+
+        @media only screen and (max-width: (@mediaQuery-medium + 8)) {
+            width: 100%;
+            height: 400px;
+            background-image: url("../lib/images/pages/ttwl2015/skylines-composite.png");
+            background-position: top center;
+            background-repeat: repeat;
+        }
+    }
+
+    // Backgrounds
+    .-level0,
+    .-level1,
+    .-level2,
+    .-level3,
+    .-level4, {
+        display: none;
+        position: absolute;
+        height: 317px;
+        width: 100%;
+        
+        @media only screen and (min-width: (@mediaQuery-medium + 9)) { display: block; }
+
+        @media only screen and (min-width: @mediaQuery-large) {
+            margin-left: -22px;
+            width: 1054px;
+        }
+
+        img {
+            @media only screen and (max-width: @mediaQuery-medium) { max-width: 100%; }
+            @media only screen and (min-width: (@mediaQuery-medium + 1)) { max-width: 1054px; }
+        }
+    }
+
+    .-level0 {
+        width: 100%;
+        z-index: @skyline-zindex;
+
+        background-image: url("../lib/images/pages/ttwl2015/skylines-level0.png");
+        background-repeat: repeat-x;
+        background-position: center bottom;
+
+        @media only screen and (max-width: @mediaQuery-medium) {
+            position: absolute;
+            top: 0;
+            margin-top: 10%;
+        }
+        @media only screen and (min-width: (@mediaQuery-medium + 1))    { bottom: -110px; }
+        @media only screen and (min-width: @mediaQuery-large)           { margin-left: auto; }
+    }
+    .-level1 { z-index: @skyline-zindex + 4; }
+    .-level2 { z-index: @skyline-zindex + 3; }
+    .-level3 { z-index: @skyline-zindex + 2; }
+    .-level4 { z-index: @skyline-zindex + 1; }
+}
+
+.ttwlBranding {
+    position: absolute;
+
+    @media only screen and (min-width: 681px) and (max-width: @mediaQuery-medium) { bottom: -23%; }
+    @media only screen and (max-width: 680px) { bottom: -15%; }
+
+    @media only screen and (min-width: (@mediaQuery-medium + 1)) {
+        position: relative;
+        margin-top: 2em;
+    }
+
+    .-logo,
+    .-date {
+        margin-bottom: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        
+        img { max-width: 100%; }
+        
+        @media only screen and (min-width: (@mediaQuery-medium + 9)) { padding: 0; }
+    }
+}
+
+
+//  ============================================================================
+//  $ SPECIAL: Schedule Groups
+//  ----------------------------------------------------------------------------
+//  -- Variables
+@dayGroupHeader-background:         @backgroundColor-grayLight;
+@dayGroupHeader-color:              @color-grayMid;
+@dayGroupEvent-border:              @borderColor-grayLight;
+
+//  -- Day Block
+.dayGroup {
+    @media only screen and (max-width: @mediaQuery-medium) { padding: 2em; }
+
+    .-day {
+        padding: 1em;
+        background-color: @dayGroupHeader-background;
+        color: @dayGroupHeader-color;
+        .fontWeight(7);
+
+        @media only screen and (min-width: (@mediaQuery-medium + 9)) { padding: 1.4em 1.5em; }
+    }
+
+    .-event {
+        padding-top: 2.2em;
+        margin-bottom: 2.2em;
+        border-top: 1px solid @dayGroupEvent-border;
+
+        &:first-of-type {
+            border-top: none;
+            padding-top: 0.5em;
+        }
+        &:last-of-type { margin-bottom: 4em; }
+
+        .-time p { margin-bottom: 0; }
+
+        @media only screen and (max-width: (@mediaQuery-medium + 8)) {
+            .-time, .-info {
+                padding-right: 1em;
+                padding-left: 1em;
+            }
+            .-time { .fontWeight(7); }
+        }
+        @media only screen and (min-width: (@mediaQuery-medium + 9)) { 
+            .-time { padding-left: 1.4em; }
+            .-info {
+                padding-right: 5em;
+                p:last-of-type { margin-bottom: 0; }
+            }
+        }
+    }
+}

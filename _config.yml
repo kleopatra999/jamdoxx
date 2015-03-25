@@ -1,0 +1,33 @@
+# Name of your blog (this will show up at the top of your page and in the RSS feed)
+name: Stack Overflow Careers Pattern Library
+
+# Short description (goes below the title; it will also be used in the RSS feed)
+description: This pattern library is a resource primarily for the Stack Overflow Careers product team, though it can inform and assist other teams at Stack Exchange. The library's purpose is to document the product's various UI patterns, establishing consistency across the product visually and within the front-end code.
+
+# The URL of your actual domain. This will be used to make absolute links in the RSS feed.
+url: http://stackexchange.github.io/uikit/
+
+#### Under the Hood Stuff #####
+
+# Markdown
+markdown: 		kramdown
+markdown_ext: 	markdown,mkdown,mkdn,mkd,md
+textile_ext:  	textile
+
+# Website Serving
+detach:  		false
+port:    		4000
+host:    		localhost
+
+# Output & Backward Compatibility
+relative_permalinks:	false
+permalink: 				pretty
+timezone: 				America/New_York
+
+# Exclude metadata and development time dependencies (like Grunt plugins)
+exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules, docs-*.html]
+
+favicons: 	lib/images/favicons
+css:		css
+lib:		lib/less
+include: 	[base.html, modules.html, grid.html]

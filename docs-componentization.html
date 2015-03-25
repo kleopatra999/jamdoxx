@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>UI Style Guide | Stack Overflow Careers</title>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        
+        <!-- SyntaxHighlighter -->
+        <script src="js/syntaxhighlighter_3.0.83/shCore.js"></script>
+        <script src="js/syntaxhighlighter_3.0.83/shAutoloader.js"></script>
+        <script src="js/syntaxhighlighterLoader.js" defer></script>
+        <link rel="stylesheet/less" type="text/css" href="css/syntaxhighlighter_3.0.83/shCore.css">
+        <link rel="stylesheet/less" type="text/css" href="css/syntaxhighlighter_3.0.83/shThemeDefault.css">
+
+        <link rel="stylesheet/less" type="text/css" href="css/pattern-guide.less">
+
+        <!-- LESS -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
+        <script>less.watch();</script>
+
+        <!--
+          ***Conditional comments for IE.***
+
+          First one includes html5 shiv code directly from Google Code for all versions of IE. The second one includes IE8.js for better backwards compatibility for IE7 and below as well as an ie.css file which will sove IE7 and below CSS bugs. Third one is just a CSS file to fix IE6 bugs.
+            -->
+        <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+        <!--[if lte IE 7]><script src="js/IE8.js" type="text/javascript"></script><![endif]-->
+        <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="all" href="css/ie6.css"/><![endif]-->
+    </head>
+    <body data-spy="scroll" data-target=".nav-sidebar">
+        <header class="page-header container">
+            <div class="-row">
+                <div class="-col3">
+                    <div class="logo-soc logo-svg">
+                        <a href="index.html" class="-logo"><img src="lib/images/logo-so-careers.svg" alt="Stack Overflow Careers" /></a>
+                    </div>
+                </div>
+                <div class="-col9">
+                    <nav id="nav-mainnav" class="hidden-print">
+                        <ul class="nav _global _row">
+                            <li class="-item"><a href="index.html">Getting Started</a></li>
+                            <li class="-item"><a href="docs-base.html">Base CSS</a></li>
+                            <li class="-item"><a href="docs-conventions.html" >Conventions</a></li>
+                            <!--<li class="-item"><a href="docs-componentization.html" class="is-active">Componentization</a></li>-->
+                            <li class="-item"><a href="#" class="is-disabled">Modules</a></li>
+                            <li class="-item"><a href="#" class="is-disabled">Views</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <div class="-row">
+                <div class="-col9">
+                    <section id="lesscss-componentization">
+                        <header>
+                            <h1>Componentization</h1>
+                        </header>
+                        <article id="lesscss-introduction">
+                            <h2 class="titles _section h3">Introduction</h2>
+                            <p class='_large'>...</p>
+                        </article>
+                        <article id="lesscss-tutorial">
+                            <h2 class="titles _section h3">Tutorial</h2>
+                            <p>To demonstrate this approach, we will build a Foobar.</p>
+                        </article>
+                        <article id="lesscss-decomposition">
+                            <h3 class="titles _section h4">Step 1: Decomposition</h3>
+                            <p>...</p>
+                        </article>
+                        <article id="lesscss-templating">
+                            <h3 class="titles _section h4">Step 2: Templating</h3>
+                            <p>...</p>
+                            <pre class="brush: html">
+                                <div class="widget">
+                                    <p></p>
+                                    <ul>
+                                        <li>...</li>
+                                        <li>...</li>
+                                    </ul>
+                                    <button class="btn"></button>                                    
+                                </div>
+                            </pre>
+                            <pre class="brush: sass">
+                                .widget {
+                                    > ul {
+                                        // ..
+                                        > li { /* .. */ }
+                                    }
+                                    > .btn { /* .. */ }
+                                }
+                            </pre>
+                            <p>..</p>
+                        </article>
+                        <article id="lesscss-customization">
+                            <h3 class="titles _section h4">Step 3: Customization</h3>
+                            <p>Mention nested component internal customization via modifiers.</p>
+                        </article>
+                        <article id="lesscss-repeat">
+                            <h3 class="titles _section h4">Step 4: Repeat</h3>
+                            <p>The approach is recursive. This makes it scalable.</p>
+                        </article>
+                        <article id="lesscss-examples">
+                            <h2 class="titles _section h3">Examples</h2>
+                            <p>..</p>
+                        </article>
+                        <article id="lesscss-widget-a">
+                            <h3 class="titles _section h4">Widget A</h3>
+                            <p>...</p>
+                            <pre class="brush: html">
+                                <div class="widget">
+                                    <p></p>
+                                    <ul>
+                                        <li>...</li>
+                                        <li>...</li>
+                                    </ul>
+                                    <button class="btn"></button>                                    
+                                </div>
+                            </pre>
+                            <pre class="brush: sass">
+                                .widget {
+                                    > ul {
+                                        // ..
+                                        > li { /* .. */ }
+                                    }
+                                    > .btn { /* .. */ }
+                                }
+                            </pre>
+                        </article>
+                        <article id="lesscss-widget-b">
+                            <h3 class="titles _section h4">Widget B</h3>
+                            <p>...</p>
+                            <pre class="brush: html">
+                                <div class="widget">
+                                    <p></p>
+                                    <ul>
+                                        <li>...</li>
+                                        <li>...</li>
+                                    </ul>
+                                    <button class="btn"></button>                                    
+                                </div>
+                            </pre>
+                            <pre class="brush: sass">
+                                .widget {
+                                    > ul {
+                                        // ..
+                                        > li { /* .. */ }
+                                    }
+                                    > .btn { /* .. */ }
+                                }
+                            </pre>
+                        </article>
+                    </section>
+                </div>
+                <div class="-col3">
+                    <nav class="nav-sidebar hidden-print affix" role="complementary">
+                        <ul class="nav _column">
+                            <li class="-item">
+                                <a href="#lesscss-introduction">Introduction</a>
+                            </li>
+                            <li class="-item">
+                                <a href="#lesscss-tutorial">Tutorial</a>
+                                <ul class="nav _column _nested">
+                                    <li class="-item"><a href="#lesscss-decomposition">Decomposition</a></li>
+                                    <li class="-item"><a href="#lesscss-templating">Templating with UI Kit</a></li>
+                                    <li class="-item"><a href="#lesscss-customization">Customization</a></li>
+                                    <li class="-item"><a href="#lesscss-repeat">Repeat</a></li>
+                                </ul>
+                            </li>
+                            <li class="-item">
+                                <a href="#lesscss-examples">Examples</a>
+                                <ul class="nav _column _nested">
+                                    <li class="-item"><a href="#lesscss-widget-a">Widget A</a></li>
+                                    <li class="-item"><a href="#lesscss-widget-b">Widget B</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

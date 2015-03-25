@@ -1,0 +1,491 @@
+﻿//
+//  STACK OVERFLOW CAREERS
+//  Product UI Guide
+//
+//  Created September 17, 2014
+//  Last Updated September 28, 2014
+//
+//  http://careers.stackoverflow.com/
+//  http://careers.stackoverflow.com/UIKit
+//
+//
+//  TABLE OF CONTENTS
+//
+//  $ 1  Imports
+//  $ 2  Variables
+//  $ 3  Layout
+//  $ 4  Type
+//  $ 5  Logo
+//
+//  ============================================================================
+//  $ IMPORT FILES
+//  ----------------------------------------------------------------------------
+//  -- Base Variables & Mixins
+@import "../lib/less/base/variables";
+@import "../lib/less/base/mixins";
+@import "../lib/less/modules";
+
+//  -- Documentation Files
+@import "code";                 // Code Syntax highlighting
+@import "syntaxhighlighter";    // Custom syntaxhighlighter theme
+
+
+//  ============================================================================
+//  $2 VARIABLES
+//  ----------------------------------------------------------------------------
+@body-background:               @color-black;
+@content-background:            @color-white;
+
+
+//  ============================================================================
+//  $3 LAYOUTS
+//  ----------------------------------------------------------------------------
+html, body {
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+
+    color: @copy-color;
+    font-family: @fontFamily-sans;
+    font-size: ~"@{fontSize-base}px";
+    .fontWeight(4);
+    letter-spacing: 0;
+    .lineHeight(base);
+    text-align: left;
+}
+
+//  -- Background Colors
+body        { background-color: @body-background; }
+.content    { background-color: @content-background; }
+
+//  -- Wrapper
+.header-site, .container-page {
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+}
+.content {
+    padding: 2.5em;
+    @media all and (min-width: (@mediaQuery-small + 1)) { padding: 4.29em; }
+
+    section {
+        padding-right: 0.5em;
+        display: block;
+        max-width: 915px;
+    }
+
+    > article {
+        margin-top: 4em;
+        &:first-of-type { margin-top: 0; }
+    }
+}
+
+//  -- Global Navigation & Logo Area
+.page-header {
+    margin-top: 1em;
+    padding-bottom: 4em;
+
+    .-logo {
+        position: relative;
+        display: block;
+        min-width: 100%;
+        height: 42px;
+
+        text-indent: -9999px;
+
+        background-image: url("../lib/images/logo-socareers.png");
+        background-image: url("../lib/images/logo-socareers.svg"), none;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-origin: cover;
+    }
+
+    //  -- Logo adjustments based on media query sizes
+    @media screen {
+        @media (min-width: @mediaQuery-medium) { 
+            .-logo {
+                top: -9px;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+//  -- Trapping for all section ids.
+[id*="section-"] {
+    padding-bottom: @padding-double * 2;
+
+    > article {
+        margin-bottom: 3em;
+        > p, > .text {
+            margin-right: @padding-double;
+            &.callout { margin-right: 0; }
+        }
+
+    }
+}
+
+.container, .nav, .navbar, .navbar-collapse {
+    &:extend(.clearfix all);
+}
+
+.affix {
+    position: relative; 
+    @media all and (min-width: (@mediaQuery-small + 1)) {
+        position: fixed;
+        width: 16.666666666%;
+    }
+
+    &._bottom {
+        bottom: 2em;
+
+        @media all and (max-width: @mediaQuery-small) { display: none; }
+    }
+}
+
+
+//  ============================================================================
+//  $4 TYPE
+//  ----------------------------------------------------------------------------
+//  -- Icon colors
+i.fa-check-circle-o { color: @color-green; }
+i.fa-warning { color: @color-yellow; }
+i.fa-times { color: @color-red; }
+
+//  -- Make <p>'s slightly larger for easier reading.
+p, .text, ul, li {
+    .fontRem(15);
+    .lineHeight(looser);
+}
+.copyright {
+    p {
+        padding-left: 2em;
+        padding-right: 2em;
+
+        color: @navSidebar_dark-color;
+        .lineHeight(loose);
+
+        opacity: 0.7;
+        .transition(opacity 0.1s ease-in);
+
+        a, a:link {
+            color: @navSidebar_dark-link_selected-color;
+            &:hover, &._hover,
+            &:active, &._active { color: @navSidebar_dark-link_selected_hover-color; }
+        }
+    }
+    &:hover, &:active, &:focus {
+        p { opacity: 1; }
+    }
+}
+
+
+//  $ Contributing Grid Example
+//  Used to showcase the scope table on contributing
+.contributing.-grid [class^="-col"] { padding: 0px 10px 10px 10px; }
+
+
+//  $ Example Block
+//  Used to showcase examples of items
+.exampleBlock {
+    padding: 0.5em 2em;
+    margin: 0;
+
+    background-color: @color-white;
+    border-radius: @borderRadius-base @borderRadius-base 0 0;
+    border: 1px solid @borderColor-grayLight;
+
+    > .exampleBlock {
+        padding: 0;
+        border: none;
+        &._rows { padding: 1.5em 0; }
+    }
+
+    ._example {
+        &:extend(.clearfix all);
+        
+        .-weights {
+            .fontSize(xl);
+            .lineHeight(tighter);
+            color: @title-color;
+
+            &._light { .fontWeight(2); }
+        }
+
+        + ._label { margin-top: 3em; }
+
+        &:last-of-type {
+            padding-bottom: 0;
+            margin: 0;
+            border-bottom: none;
+        }
+
+        button._right:first-of-type { margin-left: 1em; }
+    }
+
+    &._rows {
+        padding: 2em;
+        border-radius: @borderRadius-base;
+
+        ._example {
+            margin-bottom: 1em;
+            padding-bottom: 1em;
+
+            border-bottom-color: @borderColor-grayLight;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+        }
+    }
+
+    && {
+        &._rows ._example {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
+    }
+
+    //  $ Grid Example
+    //  Used to showcase grid layouts and cells
+    &.-grid {
+        padding: 0;
+        border: none;
+        border-radius: 0;
+
+        .-row {
+            margin-bottom: 1em;
+            .-row {
+                background-color: lighten(@color-orange,42%);
+                border: 1px solid lighten(@color-orange,32%);
+                margin-bottom: 0;
+                margin-top: -1px;
+                padding: 1.5em;
+            }
+
+            &.leaderboard {
+                border: none;
+                border-radius: 0;
+                
+                .-item {
+                    border: none;
+                    height: auto;
+                    p { &:extend(.exampleBlock.-grid>p all); }
+                    &:last-of-type > p {
+                        border-right: 1px solid lighten(@color-orange,30%);
+                    }
+                }
+            }
+
+            > [class*="-col"]:last-of-type > p {
+                border-right: 1px solid lighten(@color-orange,30%);
+            }
+        }
+
+        p {
+            margin-bottom: 0;
+            padding: 1em;
+            background-color: lighten(@color-orange,40%);
+            border: 1px solid lighten(@color-orange,30%);
+            border-right: none;
+
+            .col1 & {
+                padding: 0.5em 0.5em 0.75em;
+                code { font-size: 80%; }
+            }
+        }
+        code {
+            padding: 0;
+            color: @color-grayDark;
+            background-color: transparent;
+        }
+    }
+
+    ._label {
+        margin-bottom: 1em;
+        color: @copy_muted-color;
+        font-family: @fontFamily-code;
+        .fontSize(xs);
+        .fontWeight(4);
+        letter-spacing: 0;
+    }
+
+    blockquote._pull, .quote._pull { background-color: @color-white; }
+}
+
+dl._rows.-groups {
+    > ._label { margin-bottom: 0.5em; }
+    > ._example {
+        margin-bottom: 1em;
+        padding-bottom: 1em;
+
+        border-bottom-color: @borderColor-grayLight;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+
+        &:last-of-type { border: none; }
+    }
+}
+
+.codeBlock > div { overflow-x: scroll;}
+
+
+//  $ Example Cards
+ul.exampleCards {
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+
+    .-item {
+        position: relative;
+        float: left;
+        list-style-type: none;
+        margin: 0 0.5em 0.75em 0;
+
+        box-shadow: 0 0 4px fade(@color-grayMid,20%);
+        border-width: 1px;
+        border-style: solid;
+        border-radius: @borderRadius-base;
+
+        p {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            //width: 90%;
+            margin: 0 auto;
+            padding: 1em 0;
+
+            color: @copy_muted-color;
+            .fontSize(xs);
+
+            background-color: @color-white;
+            border-bottom-right-radius: @borderRadius-base - 1;
+            border-bottom-left-radius: @borderRadius-base - 1;
+        }
+
+        //  -- Card Sizes
+        width: 15%; 
+        height: 12em;
+
+        //  -- Layout
+        &:nth-of-type(even) { 
+            margin-right: 0;
+            @media screen and (min-width: @mediaQuery-small) { margin-right: 0.5em; }
+        }
+    }
+
+    //  -- For larger cards
+    .-item._big {
+        width: 49%;
+
+        @media screen and (min-width: @mediaQuery-small) { width: 18%; }
+    }
+
+    //  -- Customize card colors
+    .-item.color- {
+        &orange {
+            background-color: @color-orange;
+            border-color: darken(@color-orange,10%);
+        }
+        &blue {
+            background-color: @color-blue;
+            border-color: darken(@color-blue,10%);
+        }
+        &green {
+            background-color: @color-green;
+            border-color: darken(@color-green,10%);
+        }
+        &yellow {
+            background-color: @color-yellow;
+            border-color: darken(@color-yellow,10%);
+        }
+        &red {
+            background-color: @color-red;
+            border-color: darken(@color-red,10%);
+        }
+        &black {
+            background-color: @color-black;
+            border-color: @color-grayDark;
+        }
+        &grayLight {
+            background-color: @color-grayLight;
+            border-color: darken(@color-grayLight,10%);
+        }
+        &grayMid {
+            background-color: @color-grayMid;
+            border-color: darken(@color-grayMid,10%);
+        }
+        &grayDark {
+            background-color: @color-grayDark;
+            border-color: darken(@color-grayDark,10%);
+        }
+    }
+
+    //  --  Customize icon cards
+    .-item.-iconGroup,
+    .-item.-badgeGroup, {
+        &:extend(.clearfix all);
+
+        padding: 0;
+        width: 100%;
+        max-height: 70px;
+        border-color: @borderColor-gray;
+        box-shadow: none;
+
+        > .-example,
+        > .codeBlock {
+            float: left;
+            min-height: 70px;
+        }
+
+        .-example {
+            width: 25%;
+
+            > .-icon {
+                top: 0;
+                margin: 0;
+                padding: 0;
+                height: 40px;
+                width: 25%;
+                background-color: transparent;
+
+                span.icon { margin-top: 20px; }
+            }
+            > .-label {
+                position: relative;
+                margin: 40px 0 0;
+                padding: 0;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .codeBlock {
+            width: 75%;
+            text-align: left;
+        }
+
+        .highlight {
+            margin-bottom: 0;
+            margin-right: -1px;
+            min-height: 70px;
+            border-radius: 0 @borderRadius-base @borderRadius-base 0;
+
+            pre { min-height: 70px; }
+        }
+
+    }
+
+    .-item.-badgeGroup p {
+        position: relative;
+        padding: 0;
+        line-height: 70px;
+        background-color: transparent;
+    }
+}
+
+
+//  ============================================================================
+//  $6  LOGO
+//  ----------------------------------------------------------------------------
+.logo-soc { max-width: 100%; }

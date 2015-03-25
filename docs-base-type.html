@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>UI Style Guide | Stack Overflow Careers</title>
+
+        <link rel="stylesheet/less" type="text/css" href="css/pattern-guide.less">
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
+        <script>less.watch();</script>
+
+        <!--
+          ***Conditional comments for IE.***
+
+          First one includes html5 shiv code directly from Google Code for all versions of IE. The second one includes IE8.js for better backwards compatibility for IE7 and below as well as an ie.css file which will sove IE7 and below CSS bugs. Third one is just a CSS file to fix IE6 bugs.
+            -->
+        <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+        <!--[if lte IE 7]><script src="js/IE8.js" type="text/javascript"></script><![endif]-->
+        <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="all" href="css/ie6.css"/><![endif]-->
+    </head>
+    <body data-spy="scroll" data-target=".nav-sidebar">
+        <header class="page-header container">
+            <div class="-row">
+                <div class="-col4">
+                    <div class="logo-soc">
+                        <a href="index.html" class="-logo">Stack Overflow Careers</a>
+                    </div>
+                </div>
+                <div class="-col8">
+                    <nav id="nav-mainnav" class="hidden-print">
+                        <ul class="nav _global _row">
+                            <li class="-item"><a href="index.html">Getting Started</a></li>
+                            <li class="-item"><a href="docs-base.html" class="is-active">Base CSS</a>
+                            <li class="-item"><a href="#" class="is-disabled">Components</a>
+                            <li class="-item"><a href="#" class="is-disabled">Modules</a>
+                            <li class="-item"><a href="#" class="is-disabled">Views</a>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <div class="-row">
+                <div class="-col9">
+                    <article id="type-sizes">
+                        <h3>Font Sizes</h3>
+                        <section>
+                            <ul>
+                                <li>...</li>
+                            </ul>
+                        </section>
+                        <div class="code _example">
+<pre><code class="less-block"><span class="_co">//  Font Size Variables</span>
+<span class="_va">@fontSize-xxsmall</span><span class="_cl">:</span>  <span class="_va">@fontSize-base</span> * <span class="_nu">0.714285714</span>;
+<span class="_va">@fontSize-xsmall</span><span class="_cl">:</span>   <span class="_va">@fontSize-base</span> * <span class="_nu">0.857142857</span>;
+<span class="_va">@fontSize-small</span><span class="_cl">:</span>    <span class="_va">@fontSize-base</span> * <span class="_nu">0.928571429</span>;
+<span class="_va">@fontSize-base</span><span class="_cl">:</span>     <span class="_nu">14</span>;
+<span class="_va">@fontSize-medium</span><span class="_cl">:</span>   <span class="_va">@fontSize-base</span> * <span class="_nu">1.285714286</span>;
+<span class="_va">@fontSize-large</span><span class="_cl">:</span>    <span class="_va">@fontSize-base</span> * <span class="_nu">1.714285714</span>;
+<span class="_va">@fontSize-xlarge</span><span class="_cl">:</span>   <span class="_va">@fontSize-base</span> * <span class="_nu">2.571428571</span>;
+<span class="_va">@fontSize-xxlarge</span><span class="_cl">:</span>  <span class="_va">@fontSize-base</span> * <span class="_nu">3.428571429</span>;
+<span class="_va">@fontSize-xxxlarge</span><span class="_cl">:</span> <span class="_va">@fontSize-base</span> * <span class="_nu">5.142857143</span>;
+
+<span class="_co">//  Font Size Mixin Guard</span>
+<span class="_cl">.fontSize</span> (@<span class="_va">s</span>) {
+  & when (@<span class="_va">s</span> = <span class="_nu">xxs</span>)    { <span class="_cl">.fontRem</span>(<span class="_fu">ceil</span>(<span class="_va">@fontWeight-xxsmall</span>)); }
+  & when (@<span class="_va">s</span> = <span class="_nu">xs</span>)     { <span class="_cl">.fontRem</span>(<span class="_fu">ceil</span>(<span class="_va">@fontWeight-xsmall</span>)); }
+  & when (@<span class="_va">s</span> = <span class="_nu">s</span>)      { <span class="_cl">.fontRem</span>(<span class="_fu">ceil</span>(<span class="_va">@fontWeight-small</span>)); }
+  & when (@<span class="_va">s</span> = <span class="_nu">base</span>)   { <span class="_cl">.fontRem</span>(<span class="_fu">ceil</span>(<span class="_va">@fontWeight-base</span>)); }
+  & when (@<span class="_va">s</span> = <span class="_nu">m</span>)      { <span class="_cl">.fontRem</span>(<span class="_fu">ceil</span>(<span class="_va">@fontWeight-medium</span>)); }
+  & when (@<span class="_va">s</span> = <span class="_nu">l</span>)      { <span class="_cl">.fontRem</span>(<span class="_fu">ceil</span>(<span class="_va">@fontWeight-large</span>)); }
+  & when (@<span class="_va">s</span> = <span class="_nu">xlarge</span>) { <span class="_cl">.fontRem</span>(<span class="_fu">ceil</span>(<span class="_va">@fontWeight-xlarge</span>)); }
+  & when (@<span class="_va">s</span> = <span class="_nu">xxl</span>)    { <span class="_cl">.fontRem</span>(<span class="_fu">ceil</span>(<span class="_va">@fontWeight-xxlarge</span>)); }
+  & when (@<span class="_va">s</span> = <span class="_nu">xxxl</span>)   { <span class="_cl">.fontRem</span>(<span class="_fu">ceil</span>(<span class="_va">@fontWeight-xxxlarge</span>)); }
+}
+
+<span class="_co">//  Font REM Sizing Mixin</span>
+<span class="_cl">.fontRem</span> (@<span class="_va">fs</span>) {
+  <span class="_va">@remValue</span>: <span class="_va">@fs</span> / <span class="_va">@fontSize-base</span>;
+  <span class="_pr">font-size</span>: ~<span class="_co">"{fs}px"</span>;
+  <span class="_pr">font-size</span>: ~<span class="_co">"{remValue}px"</span>;
+}
+
+<span class="_co">// Apply the mixin</span>
+<span class="_pa">h1</span> { <span class="_cl">.fontSize</span>(<span class="_va">l</span>); }
+
+<span class="_co">// This will output:</span>
+<span class="_pa">h1</span> { 
+  <span class="_pr">font-size</span><span class="_cl">:</span> <span class="_nu">36px</span>;
+  <span class="_pr">font-size</span><span class="_cl">:</span> <span class="_nu">2.571428571rem</span>;
+}
+</code></pre>
+                        </div>
+                    </article>
+                    <article id="type-weight">
+                        <h3>Font Weight</h3>
+                        <section>
+                            <p>With the addition of webfonts, the use of font-weight is slightly different. Previously a "bold" weight was programmatically determined using an algorithm to fatten a font. Webfonts however are hinted specifically for declared weight values.</p>
+                            <ul>
+                                <li>Use a numerical value to declare a font-weight.</li>
+                                <li>Avoid entering raw font-weight numbers directly into LESS files. Instead use one of the font-weight variables.</li>
+                            </ul>
+                        </section>
+                        <div class="code _example">
+<pre><code class="less-block"><span class="_co">//  Font Weight Variables</span>
+<span class="_va">@fontWeight-light</span><span class="_cl">:</span>     <span class="_nu">200</span>;
+<span class="_va">@fontWeight-normal</span><span class="_cl">:</span>    <span class="_nu">400</span>;
+<span class="_va">@fontWeight-bold</span><span class="_cl">:</span>      <span class="_nu">700</span>;
+
+<span class="_co">//  Font Weight Mixin Guard</span>
+<span class="_cl">.fontWeight</span> (@<span class="_va">w</span>) {
+  & when (@<span class="_va">w</span> = <span class="_nu">2</span>) { <span class="_pr">font-weight</span><span class="_cl">:</span> <span class="_va">@fontWeight-light</span>; }
+  & when (@<span class="_va">w</span> = <span class="_nu">4</span>) { <span class="_pr">font-weight</span><span class="_cl">:</span> <span class="_va">@fontWeight-normal</span>; }
+  & when (@<span class="_va">w</span> = <span class="_nu">7</span>) { <span class="_pr">font-weight</span><span class="_cl">:</span> <span class="_va">@fontWeight-bold</span>; }
+}
+
+<span class="_co">// Apply the mixin</span>
+<span class="_pa">h1</span> { <span class="_cl">.fontWeight</span>(<span class="_nu">2</span>); }
+
+<span class="_co">// This will output:</span>
+<span class="_pa">h1</span> { <span class="_pr">font-weight</span><span class="_cl">:</span> <span class="_nu">100</span>; }
+</code></pre>
+                        </div>
+                    </article>
+                    <article id="type-height">
+                        <h3>Line Heights</h3>
+                        <section>
+                            <ul>
+                                <li>Do not declare values with line-heights (i.e. px, em). Keeping them unitless allows the value to be relative to the declared font-size, which provides greater flexibility.</li>
+                                <li>Instead of trying to rememeber a rather long number like <strong>1.428571429</strong> or variations thereof, use the pre-defined variables that have been created.</li>
+                                <li>Please avoid entering raw numbers within the LESS.</li>
+                            </ul>
+                        </section>
+                        <div class="code _example">
+<pre><code class="less-block"><span class="_co">//  Line Height Variables</span>
+<span class="_va">@lineHeight-tightest</span><span class="_cl">:</span>       (<span class="_va">@fontSize-base</span> + <span class="_nu">2</span>) / <span class="_va">@fontSize-base</span>;
+<span class="_va">@lineHeight-tighter</span><span class="_cl">:</span>        (<span class="_va">@fontSize-base</span> + <span class="_nu">4</span>) / <span class="_va">@fontSize-base</span>;
+<span class="_va">@lineHeight-tight</span><span class="_cl">:</span>          (<span class="_va">@fontSize-base</span> + <span class="_nu">6</span>) / <span class="_va">@fontSize-base</span>;
+<span class="_va">@lineHeight-base</span><span class="_cl">:</span>           <span class="_va">@fontSize-base</span> / <span class="_va">@fontSize-base</span>;
+<span class="_va">@lineHeight-loose</span><span class="_cl">:</span>          (<span class="_va">@fontSize-base</span> + <span class="_nu">8</span>) / <span class="_va">@fontSize-base</span>;
+<span class="_va">@lineHeight-looser</span><span class="_cl">:</span>         (<span class="_va">@fontSize-base</span> + <span class="_nu">10</span>) / <span class="_va">@fontSize-base</span>;
+<span class="_va">@lineHeight-loosest</span><span class="_cl">:</span>        (<span class="_va">@fontSize-base</span> / <span class="_va">@fontSize-base</span>) * <span class="_nu">2</span>;
+
+<span class="_co">//  Line Height Mixin Guard</span>
+<span class="_cl">.lineHeight</span> (@<span class="_va">lh</span>) {
+  & when (@<span class="_va">lh</span> = <span class="_va">base</span>)     { <span class="_pr">line-height</span><span class="_cl">:</span> <span class="_va">@lineHeight-base</span>; }
+  & when (@<span class="_va">lh</span> = <span class="_va">tight</span>)    { <span class="_pr">line-height</span><span class="_cl">:</span> <span class="_va">@lineHeight-tight</span>; }
+  & when (@<span class="_va">lh</span> = <span class="_va">tighter</span>)  { <span class="_pr">line-height</span><span class="_cl">:</span> <span class="_va">@lineHeight-tighter</span>; }
+  & when (@<span class="_va">lh</span> = <span class="_va">tightest</span>) { <span class="_pr">line-height</span><span class="_cl">:</span> <span class="_va">@lineHeight-tightest</span>; }
+  & when (@<span class="_va">lh</span> = <span class="_va">loose</span>)    { <span class="_pr">line-height</span><span class="_cl">:</span> <span class="_va">@lineHeight-loose</span>; }
+  & when (@<span class="_va">lh</span> = <span class="_va">looser</span>)   { <span class="_pr">line-height</span><span class="_cl">:</span> <span class="_va">@lineHeight-looser</span>; }
+  & when (@<span class="_va">lh</span> = <span class="_va">loosest</span>)  { <span class="_pr">line-height</span><span class="_cl">:</span> <span class="_va">@lineHeight-loosest</span>; }
+}
+
+<span class="_co">// Apply the mixin</span>
+<span class="_pa">h1</span> { <span class="_cl">.lineHeight</span>(<span class="_va">loose</span>); }
+
+<span class="_co">// This will output:</span>
+<span class="_pa">h1</span> { <span class="_pr">line-height</span><span class="_cl">:</span> <span class="_nu">1.571428571</span>; }
+</code></pre>
+                        </div>
+                    </article>
+                    <article id="type-spacing">
+                        <h3>Letter Spacing</h3>
+                        <section>
+                            <p>Character tracking previously available only through Javascript libraries such as <a href="http://kerningjs.com/">Kerning.js</a> and now available to us within our CSS because of Merriweather's on-screen optimizations.</p>
+                            <ul>
+                                <li>To maintain consistency with letter-spacing application, avoid entering raw values within the LESS. Instead use one of the letter-spacing variables.</li>
+                                <li>If a raw number must absolutely be entered within the LESS, please comment it appropriately so others can understand why.</li> 
+                            </ul>
+                        </section>
+                        <div class="code _example">
+<pre><code class="less-block"><span class="_co">//  Letter Spacing Variables</span>
+<span class="_va">@letterSpacing-zero</span><span class="_cl">:</span>       <span class="_nu">0</span>;
+<span class="_va">@letterSpacing-base</span><span class="_cl">:</span>       -<span class="_nu">0.5px</span>;
+<span class="_va">@letterSpacing-tight</span><span class="_cl">:</span>      <span class="_va">@letterSpacing-base</span> * <span class="_nu">2</span>;
+<span class="_va">@letterSpacing-tighter</span><span class="_cl">:</span>    <span class="_va">@letterSpacing-base</span> * <span class="_nu">5</span>;
+<span class="_va">@letterSpacing-tightest</span><span class="_cl">:</span>   <span class="_va">@letterSpacing-base</span> * <span class="_nu">10</span>;
+
+<span class="_co">//  Letter Spacing Mixin Guard</span>
+<span class="_cl">.letterSpacing</span> (@<span class="_va">ls</span>) {
+  & when (@<span class="_va">ls</span> = <span class="_nu">0</span>)        { <span class="_pr">letter-spacing</span><span class="_cl">:</span> <span class="_va">@letterSpacing-zero</span>; }
+  & when (@<span class="_va">ls</span> = <span class="_va">base</span>)     { <span class="_pr">letter-spacing</span><span class="_cl">:</span> <span class="_va">@letterSpacing-base</span>; }
+  & when (@<span class="_va">ls</span> = <span class="_va">tight</span>)    { <span class="_pr">letter-spacing</span><span class="_cl">:</span> <span class="_va">@letterSpacing-tight</span>; }
+  & when (@<span class="_va">ls</span> = <span class="_va">tighter</span>)  { <span class="_pr">letter-spacing</span><span class="_cl">:</span> <span class="_va">@letterSpacing-tighter</span>; }
+  & when (@<span class="_va">ls</span> = <span class="_va">tightest</span>) { <span class="_pr">letter-spacing</span><span class="_cl">:</span> <span class="_va">@letterSpacing-tightest</span>; }
+}
+
+<span class="_co">// Apply the Mixin</span>
+<span class="_pa">h1</span> { <span class="_cl">.letterSpacing</span>(<span class="_va">tighter</span>); }
+
+<span class="_co">// This will output:</span>
+<span class="_pa">h1</span> { <span class="_pr">letter-spacing</span><span class="_cl">:</span> <span class="_nu">-2.5px</span>; }
+</code></pre>
+                        </div>  
+                    </article>
+                    <article id="type-less">
+                        <h3>Other LESS Mixins & Variables</h3>
+                        <section>
+                            <ul>
+                                <li>...</li>
+                            </ul>
+                        </section>
+                        <div class="code _example">
+<pre><code class="less-block"><span class="_co">//  Font Size Variables</span>
+
+<span class="_co">// Apply the mixin</span>
+<span class="_pa">h1</span> { <span class="_cl">.fontSize</span>(<span class="_va">l</span>); }
+
+<span class="_co">// This will output:</span>
+<span class="_pa">h1</span> { 
+  <span class="_pr">font-size</span><span class="_cl">:</span> <span class="_nu">36px</span>;
+  <span class="_pr">font-size</span><span class="_cl">:</span> <span class="_nu">2.571428571rem</span>;
+}
+</code></pre>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="-col3">
+                <nav class="nav-sidebar hidden-print affix-top" role="complementary">
+                    <ul class="nav _column">
+                        <li class="-item"><a href="#overview">Overview</a></li>
+                        <li class="-item">
+                            <a href="#grid">Grid System</a>
+                            <ul class="nav _column _nested">
+                                <li class="-item"><a href="#grid-intro">Introduction</a></li>
+                                <li class="-item"><a href="#grid-media">Media Queries</a></li>
+                                <li class="-item"><a href="#grid-mediaqueries">Media Queries</a></li>
+                                <li class="-item"><a href="#grid-fluid">Fluid Container</a></li>
+                                <li class="-item"><a href="#grid-dynamic">Dynamic Layouts</a></li>
+                                <li class="-item"><a href="#grid-wrapping">Column Wrapping</a></li>
+                                <li class="-item"><a href="#grid-offsetting">Offseting Columns</a></li>
+                                <li class="-item"><a href="#grid-nesting">Nesting Columns</a></li>
+                                <li class="-item"><a href="#grid-less">LESS Mixins & Variables</a></li>
+                            </ul>
+                        </li>
+                        <li class="-item">
+                            <a href="#type">Typography</a>
+                            <ul class="nav _column _nested">
+                                <li class="-item"><a href="#type-intro">Introduction</a></li>
+                                <li class="-item"><a href="#type-fonts">Typefaces</a></li>
+                                <li class="-item"><a href="#type-sizes">Font Sizes</a></li>
+                                <li class="-item"><a href="#type-weight">Font Weights</a></li>
+                                <li class="-item"><a href="#type-height">Line Heights</a></li>
+                                <li class="-item"><a href="#type-spacing">Letter Spacing</a></li>
+                                <li class="-item"><a href="#type-less">Other Mixins & Variables</a></li>
+                                <li class="-item"><a href="#type-headlines">Headlines</a></li>
+                                <li class="-item"><a href="#type-copy">Copy</a></li>
+                                <li class="-item"><a href="#type-quotes">Quotes</a></li>
+                                <li class="-item"><a href="#type-lists">Lists</a></li>
+                                <li class="-item"><a href="#type-helper">Helper Classes</a></li>
+                            </ul>
+                        </li>
+                        <li class="-item">
+                            <a href="#color">Colors</a>
+                            <ul class="nav _column _nested">
+                                <li class="-item"><a href="#color-intro">Introduction</a></li>
+                                <li class="-item"><a href="#color-hsl">HSL</a></li>
+                                <li class="-item"><a href="#color-variables">Variables</a></li>
+                                <li class="-item"><a href="#color-primary">Primary</a></li>
+                                <li class="-item"><a href="#color-secondary">Secondary</a></li>
+                                <li class="-item"><a href="#color-product">Product</a></li>
+                            </ul>
+                        </li>
+                        <li class="-item">
+                            <a href="#forms">Forms</a>
+                            <ul class="nav _column _nested">
+                                <li class="-item"><a href="#forms-intro">Introduction</a></li>
+                                <li class="-item"><a href="#forms-controls">Controls</a></li>
+                                <li class="-item"><a href="#forms-static">Static Control</a></li>
+                                <li class="-item"><a href="#forms-focus">Focused State</a></li>
+                                <li class="-item"><a href="#forms-disabled">Disabled State</a></li>
+                                <li class="-item"><a href="#forms-readonly">Readonly State</a></li>
+                                <li class="-item"><a href="#forms-validation">Validation States</a></li>
+                                <li class="-item"><a href="#forms-sizes">Sizes</a></li>
+                                <li class="-item"><a href="#forms-help">Helps, Placeholders, & Labels</a></li>
+                            </ul>
+                        </li>
+                        <li class="-item">
+                            <a href="#options">Buttons</a>
+                            <ul class="nav _column _nested">
+                                <li class="-item"><a href="#options-intro">Introduction</a></li>
+                                <li class="-item"><a href="#options-base">Base Style</a></li>
+                                <li class="-item"><a href="#options-styles">Styles</a></li>
+                                <li class="-item"><a href="#options-size">Sizes</a></li>
+                                <li class="-item"><a href="#options-layout">Layout</a></li>
+                                <li class="-item"><a href="#options-states">States</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </body>
+</html>

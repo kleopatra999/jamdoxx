@@ -1,0 +1,112 @@
+//  
+//  Careers 2.0 by Stack Exchange
+//
+//  BADGES
+//
+//  TABLE OF CONTENTS
+//  • BASE STYLE
+//  • BADGE BLOCK
+//  • LEGENDS
+//
+// ===========================================================================
+//  $ BASE STYLE
+//  Base badge styling. Found in the reporting header area
+//  
+//  Live Example:   /accounts/[userID]/reporting/
+//  Styleguide:     N/A
+// ---------------------------------------------------------------------------
+.badge {
+  background-color: @bckgnd-gray;
+  .border-radius(@borderRadiusSmall);
+  color: lighten(@gray, 25%);
+  .fSize(11);  // 10px
+  font-weight: bold;
+  line-height: 1;
+  padding: 4px 6px 5px;
+  position: relative;
+  text-transform: uppercase;
+
+  &.job-featured {
+    background-color: @yellow;
+    color: #2C250E;  // REFACTOR: Variablize the color value here
+  }
+  &.job-topspot {
+    background-color: @green;
+    color: #004027;  // REFACTOR: Variablize the color value here
+  }
+}
+
+.badge-inline {
+  display: inline-block;
+  margin-right: 0.2em;  // 2px
+  top: -0.1em; // -1px
+}
+
+// Set some badge-block Sizes
+.badge-small {
+  .fSize(9);  // 9px
+}
+.badge-medium {
+  .fSize(10);  // 10px
+}
+
+
+
+// ---------------------------------------------------------------------------
+//  $ BADGE BLOCK
+//  Make the badge look more like a square.
+//  
+//  Live Example:   /accounts/[userID]/reporting/
+//  Styleguide:     N/A
+// ---------------------------------------------------------------------------
+.badge-block {
+  float: left;
+  text-indent: -9999px;
+
+  &:before {
+    left: 4px;
+    position: absolute;
+    text-indent: 0;
+  }
+
+  &.job-featured:before {
+    content: "F";
+  }
+  &.job-topspot:before {
+    content: "T";
+  }
+
+  &.badge-small {
+    height: 1em;
+    width: 0.3em;
+  }
+
+  &.badge-medium {
+    height: 2em;
+    width: 2em;
+  }
+}
+
+
+  // ---------------------------------------------------------------------------
+  //  $$ ADJUSTMENTS
+  //  Make the badge look more like a square.
+  // ---------------------------------------------------------------------------
+  // Layout adjustments when used within a data-legend
+  .data-legend .badge-block {
+    left: 0;
+    position: absolute;
+  }
+
+  // Slight positioning / layout adjustments for the referrers table.
+  .data-table-referrers .badge-block {
+    display: block;
+    float: none;
+    left: 2px;
+    padding: 0;
+  }
+
+  // Layout adjustments
+  .l-header h2 + .badge {
+    margin-left: 1em;
+  }

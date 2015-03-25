@@ -1,0 +1,121 @@
+//
+//  STACK OVERFLOW CAREERS
+//  Product UI Pattern Guide
+//  Designed & managed by the Stack Exchange Creative Team
+//
+//  Created May 2, 2014
+//
+//  http://careers.stackoveflow.com
+//  http://creative.stackexchange.com
+//
+//
+//  UI GUIDE STYLES
+//  Styles used specifically for the Product UI Pattern Guide
+//  ============================================================================
+//  $ VARIABLES
+//  ============================================================================
+//  --  HTML / JS
+@html-tag:      #2f6f9f;
+@html-attr:     #4f9fcf;
+@html-value:    #d44950;
+@html-copy:     #0AB;
+@html-comment:  #999;
+@html-js1:      #C30;
+
+//  --  SNIPPET
+@snip-bck:      #f9f2f4;
+@snip-text:     #c7254e;
+
+//  --  LESS
+@less-class:    #0AB;
+@less-comment:  #999;
+@less-colon:    #99f;
+@less-media:    #069;
+@less-parameter:#2f6f9f;
+@less-variable: #2f6f9f;
+@less-property: #4f9fcf;
+@less-function: #c0f;
+@less-number:   #f60;
+@less-type:     #078;
+
+
+
+// ---------------------------------------------------------------------------
+//  $ SYNTAX HIGHLIGHTING
+// ---------------------------------------------------------------------------
+.highlight {
+    margin-top: -1px;
+    margin-bottom: 2em;
+    // padding: 1em 1.5em;
+
+    color: @copy-color;
+    font-family: @fontFamily-code;
+    .fontSize(s);
+    .lineHeight(loose);
+
+    pre {
+        margin-bottom: 0;
+        margin-top: 0;
+        padding: 7px 7px 5px 7px;
+
+        word-break: normal;
+        word-wrap: break-word;
+
+        background-color: lighten(@backgroundColor-grayLight,6%);
+        border: 1px solid @borderColor-grayLight;
+        box-shadow: inset 30px 0 0 @backgroundColor-grayLight, inset 31px 0 0 @borderColor-grayLight;
+    }
+
+    .lineno {
+        margin-right: 1.5em;
+        color: @color-grayMid;
+    }
+}
+
+code {
+    padding-bottom: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+
+    font-family: @fontFamily-code;
+    font-size: 90%;
+    color: @snip-text;
+    background-color: @snip-bck;
+}
+
+pre code {
+    padding: 0;
+
+    color: inherit;
+    font-size: inherit;
+    white-space: pre-wrap;
+
+    background-color: transparent;
+    border-radius: 0;
+}
+
+//  ----------------------------------------------------------------------------
+//  $ CODE COLOR STYLING
+//  ----------------------------------------------------------------------------
+.language-html {
+    .nt  { color: @html-tag; }
+    .na  { color: @html-attr; }
+    .s  { color: @html-value; }
+    ._cp  { color: @html-copy; }
+    ._co  { color: @html-comment; }
+    ._j1  { color: @html-js1;}
+}
+
+.language-scss {
+    .nc, .s2  { color: @less-class; }
+    ._co  { color: @less-comment; }
+    .k  { color: @less-colon; }
+    ._me  { color: @less-media; }
+    .k  { color: @less-parameter; }
+    ._va  { color: @less-variable; }
+    ._pr  { color: @less-property; }
+    ._fu  { color: @less-function; }
+    ._nu  { color: @less-number; }
+    ._ty  { color: @less-type; }
+}

@@ -1,0 +1,23 @@
+---
+layout: default
+title: Grid Documentation
+permalink: /grid.html
+id: grid
+css: pattern-guide
+---
+
+<section id="overview">
+    <h1>{{ page.title }}</h1>
+</section>
+<article id="grid-intro">
+    <p class="_large">The <strong>Stack Overflow Careers</strong> Pattern Library is built upon a 12-column percentage-based grid system. By default columns <strong>do not have margins or padding (aka gutters) applied</strong> to them. If you wish to have gutters within a grid, <a href="#grid-gutters">you can apply them though.</a> All layout elements have <code>box-sizing: border-box;</code> applied to them so column borders and padding widths are included within a column's width. For more information as to why, please refer to <strong>Paul Irish</strong>'s post, <a href="http://www.paulirish.com/2012/box-sizing-border-box-ftw/"><em>* { Box-sizing: Border-box } FTW</em></a>.</p>
+
+    <p>Since the grid system is percentage-based, all widths are calculated from within their parent containers. Currently the grid system lives within a 1000px <code>div.container</code> element. <strong>The grid containers are not responsive yet.</strong> (Yes, yes, I know.)</p>
+</article>
+
+{% include grid/basicUsage.html %}
+{% include grid/columns.html %}
+{% include grid/columnsOffset.html %}
+{% include grid/columnsNesting.html %}
+{% include grid/columnsOrder.html %}
+{% include grid/gutters.html %}
