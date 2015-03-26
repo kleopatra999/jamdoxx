@@ -1,3 +1,6 @@
 [submodule "uikit"]
 	path = uikit
 	url = https://github.com/StackExchange/uikit.git
+[submodule "jam"]
+	path = jam
+	url = https://github.com/StackExchange/jam.git
