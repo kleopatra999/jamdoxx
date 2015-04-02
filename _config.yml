@@ -31,4 +31,4 @@ favicons: 	lib/images/favicons
 css:		lib/css
 lib:		jam/less
 libJS:		jam/js
-include: 	[base.html, modules.html, grid.html]
+include: 	[base.html, modules.html, grid.html, visual-library.html]
