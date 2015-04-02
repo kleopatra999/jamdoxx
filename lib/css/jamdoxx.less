@@ -21,9 +21,9 @@
 //  $ IMPORT FILES
 //  ----------------------------------------------------------------------------
 //  -- Base Variables & Mixins
-@import "../jam/less/base/variables";
-@import "../jam/less/base/mixins";
-@import "../jam/less/modules";
+@import "../../jam/less/base/variables";
+@import "../../jam/less/base/mixins";
+@import "../../jam/less/modules";
 
 //  -- Documentation Files
 @import "code";                 // Code Syntax highlighting
@@ -93,8 +93,8 @@ body        { background-color: @body-background; }
 
         text-indent: -9999px;
 
-        background-image: url("../jam/images/logo-socareers.png");
-        background-image: url("../jam/images/logo-socareers.svg"), none;
+        background-image: url("../../jam/images/logos/logo-socareers.png");
+        background-image: url("../../jam/images/logos/logo-socareers.svg"), none;
         background-position: 0 0;
         background-repeat: no-repeat;
         background-origin: cover;
@@ -489,3 +489,35 @@ ul.exampleCards {
 //  $6  LOGO
 //  ----------------------------------------------------------------------------
 .logo-soc { max-width: 100%; }
+
+//  ============================================================================
+//  $6  Visual Library
+//  ----------------------------------------------------------------------------
+@color-amber:    hsl(37,100%,57%);
+
+._background-orange {
+    background-color: @color-orange;
+}
+
+._background-yellow {
+    background-color: @color-yellow;
+}
+
+._background-amber {
+    background-color: @color-amber;
+}
+
+._background-grayLighter {
+    background-color: @backgroundColor-grayLighter;
+}
+
+.-content {
+    height: 20em;
+    padding: 1em;
+
+    img {
+        margin: 0 auto;
+        display: block;
+        height: 100%
+    }
+}
