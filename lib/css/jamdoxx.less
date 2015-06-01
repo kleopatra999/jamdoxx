@@ -343,8 +343,6 @@ ul.exampleCards {
         .-title     { color: @white; }
         .-weight    { color: @gray-700; }
 
-        dt { .fontWeight(7); }
-        dd { font-family: @fontFamily-code; }
         code {
             background-color: transparent !important;
             color: inherit;
@@ -566,12 +564,24 @@ ul.exampleCards {
     .-item.-iconGroup,
     .-item.-badgeGroup, {
         &:extend(.clearfix all);
+        margin-bottom: @margin-base;
 
+        position: relative;
         padding: 0;
         width: 100%;
         max-height: 70px;
-        border-color: @borderColor-gray;
+        border-style: solid;
+        border-width: 1px;
+        border-color: @borderColor-grayLight;
+        border-radius: @borderRadius-base;
         box-shadow: none;
+
+        p {
+            margin: 0 auto;
+            color: @copy_muted-color;
+            .fontSize(s);
+            text-align: center;
+        }
 
         > .-example,
         > .codeBlock {
@@ -587,14 +597,13 @@ ul.exampleCards {
                 margin: 0;
                 padding: 0;
                 height: 40px;
-                width: 25%;
                 background-color: transparent;
 
                 span.icon { margin-top: 20px; }
             }
             > .-label {
                 position: relative;
-                margin: 40px 0 0;
+                margin: 0;
                 padding: 0;
                 width: 100%;
                 height: auto;
@@ -612,7 +621,14 @@ ul.exampleCards {
             min-height: 70px;
             border-radius: 0 @borderRadius-base @borderRadius-base 0;
 
-            pre { min-height: 70px; }
+            pre {
+                margin-top: 1px;
+                margin-right: 1px;
+                min-height: 68px;
+                border-radius: 0 @borderRadius-base @borderRadius-base 0;
+                border: none;
+                border-left: 1px solid @borderColor-grayLight;
+            }
         }
 
     }
