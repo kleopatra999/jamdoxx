@@ -13,28 +13,28 @@
 //  ============================================================================
 //  $ VARIABLES
 //  ----------------------------------------------------------------------------
-@navSidebar-background:                         @color-white;
-@navSidebar-color:                              desaturate(lighten(@color-grayMid,13%),4%);
+@navSidebar-background:                             @white;
+@navSidebar-color:                                  @gray-700;
 
-@navSidebar_dark-background:                    @color-black;
-@navSidebar_dark-color:                         desaturate(lighten(@color-grayMid,13%),4%);
-@navSidebar_dark-color_selected:                saturate(lighten(@color-grayMid,47%),9%);
-@navSidebar_dark-link-background:               transparent;
-@navSidebar_dark-link_hover-background:         fade(@navSidebar_dark-link_selected-background,20%);
-@navSidebar_dark-link_selected-background:      spin(saturate(darken(@color-grayMid,18%),4%),2);
-@navSidebar_dark-link_selected_hover-background:lighten(@navSidebar_dark-link_selected-background,3%);
-@navSidebar_dark-link-border:                   @navSidebar_dark-background;
-@navSidebar_dark-link_hover-border:             fade(@color-orange,80%);
-@navSidebar_dark-link_selected-border:          lighten(@color-orange,5%);
-@navSidebar_dark-link_selected_hover-border:    @color-orange;
-@navSidebar_dark-link-color:                    @navSidebar_dark-color;
-@navSidebar_dark-link_hover-color:              darken(@color-grayLight,20%);
-@navSidebar_dark-link_selected-color:           @navSidebar_dark-color_selected;
-@navSidebar_dark-link_selected_hover-color:     fade(@navSidebar_dark-color_selected,90%);
-@navSidebarNested_dark-link-color:              darken(@navSidebar_dark-color,15%);
+@navSidebar_dark-background:                        @gray-900;
+@navSidebar_dark-color:                             @gray-600;
+@navSidebar_dark-color_selected:                    @gray-200;
+@navSidebar_dark-link-background:                   transparent;
+@navSidebar_dark-link_hover-background:             lighten(@gray-900,6%);
+@navSidebar_dark-link_selected-background:          lighten(@gray-900,6%);
+@navSidebar_dark-link_selected_hover-background:    @gray-800;
+@navSidebar_dark-link-border:                       @navSidebar_dark-background;
+@navSidebar_dark-link_hover-border:                 fade(@orange-700,80%);
+@navSidebar_dark-link_selected-border:              @navSidebar_dark-link_selected-background;
+@navSidebar_dark-link_selected_hover-border:        @orange-700;
+@navSidebar_dark-link-color:                        @navSidebar_dark-color;
+@navSidebar_dark-link_hover-color:                  @gray-200;
+@navSidebar_dark-link_selected-color:               @gray-200;
+@navSidebar_dark-link_selected_hover-color:         fade(@navSidebar_dark-color_selected,90%);
+@navSidebarNested_dark-link-color:                  @gray-400;
 
-@navSidebar_dark-accountBadge-background:   @color-orange;
-@navSidebar_dark-companyBadge-background:   spin(darken(darken(@color-orange,6%),66%),11);
+@navSidebar_dark-accountBadge-background:           @orange-600;
+@navSidebar_dark-companyBadge-background:           @golden-900;
 
 
 //  ============================================================================
@@ -77,17 +77,18 @@
         &._nested a { color: @navSidebarNested_dark-link-color; }
         // -- States
         .active > a {
+            margin-top: 3px;
             color: @navSidebar_dark-link_selected-color;
-            background-color: saturate(darken(@navSidebar_dark-link_selected-background,10%),5%);
+            background-color: @navSidebar_dark-background;
             border-left: none;
 
-            @media all and (max-width: @mediaQuery-small)       { border-bottom-color: darken(@navSidebar_dark-link_selected-border,30%); }
-            @media all and (min-width: (@mediaQuery-small + 1)) { border-right-color: darken(@navSidebar_dark-link_selected-border,30%); }
+            @media all and (max-width: @mediaQuery-small)       { border-bottom-color: @navSidebar_dark-link_selected-border; }
+            @media all and (min-width: (@mediaQuery-small + 1)) { border-right-color: @navSidebar_dark-link_selected-border; }
 
             &:hover, &._hover,
             &:active, &._active {
                 color: @navSidebar_dark-link_selected_hover-color;
-                background-color: saturate(darken(@navSidebar_dark-link_selected-background,5%),5%);
+                background-color: @navSidebar_dark-link_selected_hover-background;
                 border-left: none;
 
                 @media all and (max-width: @mediaQuery-small)       { border-bottom: 4px solid darken(@navSidebar_dark-link_selected-border,10%); }
@@ -95,6 +96,7 @@
             }
         }
         .active .active > a {
+            margin-top: 0;
             background-color: @navSidebar_dark-link_selected-background;
             @media all and (max-width: @mediaQuery-small)       { border-bottom-color: @navSidebar_dark-link_selected-border; }
             @media all and (min-width: (@mediaQuery-small + 1)) { border-right-color: @navSidebar_dark-link_selected-border; }
