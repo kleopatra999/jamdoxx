@@ -1,6 +1,4 @@
-[Product Pattern Library](http://stackexchange.github.io/jam/)
+[Jam Documentation](http://stackexchange.github.io/jamdoxx/)
 =====
 
-Welcome to Jam, the Stack Overflow Pattern Library. This is an active library that provides visual direction and syntax recommendations for Stack Overflow's LESS, CSS, and JS.
-
-This is developed and maintained by the internal product team, but in the spirit of all things [**Stack Exchange**](http://www.stackexchange.com), we are publishing this resource externally in the hopes it's an inspiration and guide for your team as you create your own pattern library.
+This the official documentation for the [Jam Pattern Library](https://github.com/StackExchange/jam) developed by **Stack Overflow**. If you are trying to contribute to the library itself, see the [repository here](https://github.com/StackExchange/jam). This repository is only for the corresponding documentation.
