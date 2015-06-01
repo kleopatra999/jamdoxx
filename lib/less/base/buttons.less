@@ -17,13 +17,13 @@
 //  ----------------------------------------------------------------------------
 //  $$  Disabled Button
 //  --  Default State
-@btn_disabled-backgroundColor:                  desaturate(lighten(@color-grayMid,42%),1%);
-@btn_disabled-borderColor:                      spin(desaturate(lighten(@color-grayMid,30%),2%),-1);
-@btn_disabled-shadowDropColor:                  fade(@color-white,0%);
-@btn_disabled-shadowInnerColor:                 fade(@color-white,50%);
-@btn_disabled-textColor:                        @color-white;
+@btn_disabled-backgroundColor:                  @gray-200;
+@btn_disabled-borderColor:                      @gray-300;
+@btn_disabled-shadowDropColor:                  fade(@white,0%);
+@btn_disabled-shadowInnerColor:                 fade(@white,50%);
+@btn_disabled-textColor:                        @white;
 //  --  Hover State
-@btn_disabled_hover-backgroundColor:            darken(@btn_disabled-backgroundColor,3%);
+@btn_disabled_hover-backgroundColor:            @gray-300;
 @btn_disabled_hover-borderColor:                darken(@btn_disabled-borderColor,5%);
 @btn_disabled_hover-shadowDropColor:            @btn_disabled-shadowDropColor;
 @btn_disabled_hover-shadowInnerColor:           @btn_disabled-shadowInnerColor;
@@ -32,31 +32,31 @@
 //  ----------------------------------------------------------------------------
 //  $$  Primary Button
 //  - Default State
-@btn_primary-backgroundColor:                   @color-blue;
-@btn_primary-borderColor:                       darken(@btn_primary-backgroundColor,9%);
-@btn_primary-shadowDropColor:                   fade(@color-white,0%);
-@btn_primary-shadowInnerColor:                  lighten(@btn_primary-backgroundColor,21%);
-@btn_primary-textColor:                         @color-white;
+@btn_primary-backgroundColor:                   @blue-700;
+@btn_primary-borderColor:                       @blue-800;
+@btn_primary-shadowDropColor:                   fade(@white,0%);
+@btn_primary-shadowInnerColor:                  @blue-500;
+@btn_primary-textColor:                         lighten(@blue-100,5%);
 //  - Hover State
-@btn_primary_hover-backgroundColor:             darken(@btn_primary-backgroundColor,4%);
-@btn_primary_hover-borderColor:                 desaturate(darken(@btn_primary_hover-backgroundColor,9%),2%);
-@btn_primary_hover-shadowDropColor:             fade(@color-blue,20%);
-@btn_primary_hover-shadowInnerColor:            fade(@color-white,0%);
-@btn_primary_hover-textColor:                   @color-white;
+@btn_primary_hover-backgroundColor:             darken(@btn_primary-backgroundColor,5%);
+@btn_primary_hover-borderColor:                 darken(@btn_primary-borderColor,5%);
+@btn_primary_hover-shadowDropColor:             fade(@blue,20%);
+@btn_primary_hover-shadowInnerColor:            fade(@white,0%);
+@btn_primary_hover-textColor:                   @white;
 
 //  ----------------------------------------------------------------------------
 //  $$  Secondary Button
 //  - Default State
-@btn_secondary-backgroundColor:                 lighten(@color-blue,48%);
-@btn_secondary-borderColor:                     desaturate(lighten(@color-blue,23%),50%);
-@btn_secondary-shadowDropColor:                 fade(@color-white,0%);
-@btn_secondary-shadowInnerColor:                @color-white;
-@btn_secondary-textColor:                       @color-blue;
+@btn_secondary-backgroundColor:                 lighten(@azure-100,5%);
+@btn_secondary-borderColor:                     @azure-300;
+@btn_secondary-shadowDropColor:                 fade(@white,0%);
+@btn_secondary-shadowInnerColor:                lighten(@azure-100,10%);
+@btn_secondary-textColor:                       @blue-700;
 //  - Hover State
-@btn_secondary_hover-backgroundColor:           spin(lighten(@btn_secondary-backgroundColor,1%),5);
-@btn_secondary_hover-borderColor:               @color-blue;
-@btn_secondary_hover-shadowDropColor:           fade(@color-blue,20%);
-@btn_secondary_hover-shadowInnerColor:          fade(@color-white,0%);
+@btn_secondary_hover-backgroundColor:           lighten(@azure-100,3%);
+@btn_secondary_hover-borderColor:               @azure-400;
+@btn_secondary_hover-shadowDropColor:           fade(@azure-500,20%);
+@btn_secondary_hover-shadowInnerColor:          fade(@white,0%);
 @btn_secondary_hover-textColor:                 darken(@btn_secondary-textColor,5%);
 
 //  ----------------------------------------------------------------------------
@@ -164,32 +164,32 @@
 //  ----------------------------------------------------------------------------
 //  $$ Confirmation Button
 //  - Default State
-@btn_confirm-backgroundColor:                   spin(saturate(darken(@color-green,21%),36%),-19);
-@btn_confirm-borderColor:                       spin(saturate(darken(@color-green,29%),31%),-18);
-@btn_confirm-shadowDropColor:                   fade(@color-white,0%);
-@btn_confirm-shadowInnerColor:                  fade(spin(saturate(lighten(@color-green,30%),37%),-19),50%);
-@btn_confirm-textColor:                         @color-white;
+@btn_confirm-backgroundColor:                   @green-700;
+@btn_confirm-borderColor:                       @green-800;
+@btn_confirm-shadowDropColor:                   fade(@white,0%);
+@btn_confirm-shadowInnerColor:                  fade(@green-500,75%);
+@btn_confirm-textColor:                         lighten(@green-100,5%);
 //  - Hover State
-@btn_confirm_hover-backgroundColor:             spin(saturate(darken(@color-green,27%),37%),-18);
-@btn_confirm_hover-borderColor:                 spin(saturate(darken(@color-green,37%),34%),-18);
-@btn_confirm_hover-shadowDropColor:             fade(@btn_confirm-backgroundColor,20%);
-@btn_confirm_hover-shadowInnerColor:            fade(@color-white,0%);
-@btn_confirm_hover-textColor:                   @btn_confirm-textColor;
+@btn_confirm_hover-backgroundColor:             darken(@btn_confirm-backgroundColor,3%);
+@btn_confirm_hover-borderColor:                 darken(@btn_confirm-borderColor,5%);
+@btn_confirm_hover-shadowDropColor:             fade(@green-500,50%);
+@btn_confirm_hover-shadowInnerColor:            fade(@btn_confirm-shadowInnerColor,0%);
+@btn_confirm_hover-textColor:                   @white;
 
 //  ----------------------------------------------------------------------------
 //  $$ Danger Button
 //  - Default State
-@btn_danger-backgroundColor:                    @color-red;
-@btn_danger-borderColor:                        saturate(darken(@color-red,20%),25%);
-@btn_danger-shadowDropColor:                    fade(@color-white,0%);
-@btn_danger-shadowInnerColor:                   saturate(lighten(@color-red,27%),25%);
-@btn_danger-textColor:                          @color-white;
+@btn_danger-backgroundColor:                    @red-700;
+@btn_danger-borderColor:                        @red-800;
+@btn_danger-shadowDropColor:                    fade(@red-500,0%);
+@btn_danger-shadowInnerColor:                   @red-500;
+@btn_danger-textColor:                          lighten(@red-100,5%);
 //  - Hover State
-@btn_danger_hover-backgroundColor:              saturate(darken(@color-red,10%),25%);
-@btn_danger_hover-borderColor:                  saturate(darken(@color-red,24%),24%);
-@btn_danger_hover-shadowDropColor:              fade(@btn_danger-backgroundColor,20%);
-@btn_danger_hover-shadowInnerColor:             fade(@color-white,0%);
-@btn_danger_hover-textColor:                    @color-white;
+@btn_danger_hover-backgroundColor:              darken(@btn_danger-backgroundColor,5%);
+@btn_danger_hover-borderColor:                  darken(@btn_danger-borderColor,5%);
+@btn_danger_hover-shadowDropColor:              fade(@btn_danger-shadowDropColor,50%);
+@btn_danger_hover-shadowInnerColor:             fade(@btn_danger-shadowInnerColor,0%);
+@btn_danger_hover-textColor:                    @white;
 
 
 // ===========================================================================
@@ -216,14 +216,14 @@ button,
     cursor: pointer;
     outline: none;
     vertical-align: middle;
-    .transition(all 0.15s ease);
+    .transition(all 0.15s ease-in);
 
     // :hover / :focus state
     &:hover, &._hover,
     &:active, &._active,
     &:focus, &._focus {
         text-decoration: none;
-        .transition(all 0.15s ease);
+        .transition(all 0.15s ease-in);
         outline: none;
     }
     //  --  Disabled Buttons
