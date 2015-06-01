@@ -29,6 +29,6 @@ exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffe
 
 favicons: 	lib/images/favicons
 css:		lib/css
-lib:		jam/less
-libJS:		jam/js
+lib:		lib/less
+libJS:		lib/js
 include: 	[base.html, modules.html, grid.html, visual-library.html]
