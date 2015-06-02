@@ -14,10 +14,10 @@
 //  $ VARIABLES
 //  ----------------------------------------------------------------------------
 //  -- Colors
-@contentRollup-background:                  spin(desaturate(lighten(@color-grayMid,54%),1%),4);
-@contentRollup-border:                      spin(desaturate(lighten(@color-grayMid,41%),1%),-3);
-@contentRollup-color:                       @color-grayMid;
-@contentRollup-content-background:          @color-white;
+@contentRollup-background:                  @gray-100;
+@contentRollup-border:                      @gray-200;
+@contentRollup-color:                       @gray-700;
+@contentRollup-content-background:          @white;
 
 
 //  ============================================================================
@@ -46,7 +46,6 @@
 
         // Alter button styles
         .btn {
-            .fontSize(xs);
             .fontWeight(4);
 
             &._clear { padding: 0.5em; }

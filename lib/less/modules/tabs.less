@@ -13,29 +13,29 @@
 //  ============================================================================
 //  $ VARIABLES
 //  ----------------------------------------------------------------------------
-@tab-background:                transparent;
-@tab_hover-background:          fade(@backgroundColor-grayLighter,40%);
-@tab-border:                    transparent;
-@tab_hover-border:              @tab_hover-background;
-@tab-borderBottom:              @tab_selected-border;
-@tab-color:                     desaturate(lighten(@color-grayMid,13%),4%);
-@tab_hover-color:               @color-grayMid;
+@tab-background:                    transparent;
+@tab-border:                        transparent;
+@tab-borderBottom:                  @borderColor-gray;
+@tab-color:                         @gray-500;
+@tab_hover-background:              @gray-100;
+@tab_hover-border:                  @tab_hover-background;
+@tab_hover-color:                   @gray-700;
 
-@tab_selected-background:       @color-white;
-@tab_selected_hover-background: @tab_selected-background;
-@tab_selected-borderTop:        @color-orange;
-@tab_selected-borderBottom:     @tab_selected-background;
-@tab_selected-border:           @borderColor-gray;
-@tab_selected_hover-border:     @tab_selected-border;
-@tab_selected-color:            @color-black;
-@tab_selected_hover-color:      darken(@tab_selected-color,5%);
+@tab_selected-background:           @white;
+@tab_selected-borderTop:            @orange-700;
+@tab_selected-borderBottom:         @tab_selected-background;
+@tab_selected-border:               @tab-borderBottom;
+@tab_selected-color:                @gray-800;
+@tab_selected_hover-background:     @tab_selected-background;
+@tab_selected_hover-border:         @tab_selected-border;
+@tab_selected_hover-color:          darken(@tab_selected-color,5%);
 
-@tabBoard-background:               transparent;
-@tabBoard-border:                   transparent;
-@tabBoard-color:                    desaturate(lighten(@color-grayMid,13%),4%);
-@tabBoard-success-color:            spin(saturate(darken(@color-green,19%),37%),-9);
-@tabBoard-warning-color:            @color-red;
-@tabBoard_selected-borderBottom:    @color-orange;
+@tabBoard-background:               fade(@white,0%);
+@tabBoard-border:                   fade(@white,0%);
+@tabBoard-color:                    @gray-500;
+@tabBoard-success-color:            @green-700;
+@tabBoard-warning-color:            @red-700;
+@tabBoard_selected-borderBottom:    @orange-700;
 
 
 //  ============================================================================
@@ -72,8 +72,6 @@
                 color: @tab_hover-color;
                 text-decoration: none;
                 background-color: @tab_hover-background;
-                border-color: @tab_hover-border;
-                border-bottom: 1px solid @tab-border;
             }
         }
     }
@@ -84,6 +82,7 @@
         > a {
             padding-right: 1.5em;
             padding-left: 1.5em;
+            padding-bottom: 1em;
             color: @tab_selected-color;
             border-color: @tab_selected-border;
             border-bottom-color: @tab_selected-borderBottom;
@@ -122,7 +121,7 @@
     }
 
     &-borderBottom {
-        margin-top: -2px;
+        margin-top: -1px;
         margin-bottom: 2em;
         height: 1px;
         width: 100%;
