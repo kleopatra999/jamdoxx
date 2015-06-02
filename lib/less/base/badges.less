@@ -19,65 +19,65 @@
 //  ----------------------------------------------------------------------------
 //  -- Default
 @badge-cornerRadius:                @borderRadius-small;
-@badge-background:                  transparent;
+@badge-background:                  fade(@white,0%);
 @badge-border:                      @badge-background;
 @badge-color:                       inherit;
 
 //  -- Featured Colors
-@badgeFeatured-background:          spin(lighten(@color-blue,35%),-1);
-@badgeFeatured_hover-background:    saturate(@badgeFeatured-background,10%);
+@badgeFeatured-background:          @blue-300;
 @badgeFeatured-border:              @badgeFeatured-background;
+@badgeFeatured-color:               @azure-900;
+@badgeFeatured_hover-background:    darken(@badgeFeatured-background,5%);
 @badgeFeatured_hover-border:        @badgeFeatured_hover-background;
-@badgeFeatured-color:               desaturate(darken(@color-blue,22%),18%);
-@badgeFeatured_hover-color:         saturate(@badgeFeatured-color,5%);
+@badgeFeatured_hover-color:         darken(@badgeFeatured-color,5%);
 
 //  -- Top Spot Colors
-@badgeTopSpot-background:           desaturate(lighten(@color-orange,15%),1%);
-@badgeTopSpot_hover-background:     desaturate(darken(@badgeTopSpot-background,10%),3%);
+@badgeTopSpot-background:           @orange-500;
 @badgeTopSpot-border:               @badgeTopSpot-background;
+@badgeTopSpot-color:                darken(@orange-900,15%);
+@badgeTopSpot_hover-background:     darken(@badgeTopSpot-background,5%);
 @badgeTopSpot_hover-border:         @badgeTopSpot_hover-background;
-@badgeTopSpot-color:                spin(desaturate(darken(@color-orange,32%),42%),2);
 @badgeTopSpot_hover-color:          darken(@badgeTopSpot-color,5%);
 
 //  -- Joel Test
-@badgeJoelTest-background:          spin(saturate(darken(@color-green,27%),30%),-8);
-@badgeJoelTest_hover-background:    desaturate(darken(@badgeJoelTest-background,3%),5%);
+@badgeJoelTest-background:          @green-800;
 @badgeJoelTest-border:              @badgeJoelTest-background;
+@badgeJoelTest-color:               @white;
+@badgeJoelTest_hover-background:    darken(@badgeJoelTest-background,5%);
 @badgeJoelTest_hover-border:        @badgeJoelTest_hover-background;
-@badgeJoelTest-color:               @color-white;
-@badgeJoelTest_hover-color:         @badgeJoelTest-color;
+@badgeJoelTest_hover-color:         fade(@badgeJoelTest-color,95%);
 
 //  -- Offers Relocation
-@badgeRelocation-background:        @color-grayLight;
-@badgeRelocation_hover-background:  darken(@badgeRelocation-background,5%);
-@badgeRelocation-border:            @badgeRelocation_hover-background;
+@badgeRelocation-background:        darken(@gray-100,5%);
+@badgeRelocation-border:            @badgeRelocation-background;
+@badgeRelocation-color:             @gray-700;
+@badgeRelocation_hover-background:  darken(@gray-200,5%);
 @badgeRelocation_hover-border:      darken(@badgeRelocation-border,5%);
-@badgeRelocation-color:             @color-grayDark;
-@badgeRelocation_hover-color:       @badgeRelocation-color;
+@badgeRelocation_hover-color:       darken(@badgeRelocation-color,5%);
 
 //  -- Work Remotely
-@badgeRemote-background:            spin(darken(@color-yellow,21%),-5);
-@badgeRemote_hover-background:      darken(@badgeRemote-background,3%);
+@badgeRemote-background:            @yellow-900;
 @badgeRemote-border:                @badgeRemote-background;
+@badgeRemote-color:                 @gray-800;
+@badgeRemote_hover-background:      spin(@badgeRemote-background,-3);
 @badgeRemote_hover-border:          @badgeRemote_hover-background;
-@badgeRemote-color:                 @color-black;
-@badgeRemote_hover-color:           @badgeRemote-color;
+@badgeRemote_hover-color:           darken(@badgeRemote-color,5%);
 
 //  -- Message Count
-@badgeMessages-background:          @color-orange;
-@badgeMessages_hover-background:    spin(darken(@color-orange,6%),-1);
+@badgeMessages-background:          @orange-700;
 @badgeMessages-border:              @badgeMessages-background;
+@badgeMessages-color:               @white;
+@badgeMessages_hover-background:    @orange-800;
 @badgeMessages_hover-border:        @badgeMessages_hover-background;
-@badgeMessages-color:               @color-white;
-@badgeMessages_hover-color:         @badgeMessages-color;
+@badgeMessages_hover-color:         fade(@badgeMessages-color,95%);
 
 //  -- Invites Count
-@badgeInvites-background:           spin(desaturate(lighten(@color-brown,24%),11%),-3);
-@badgeInvites_hover-background:     darken(@badgeInvites-background,5%);
+@badgeInvites-background:           @golden-900;
 @badgeInvites-border:               @badgeInvites-background;
+@badgeInvites-color:                @white;
+@badgeInvites_hover-background:     darken(@badgeInvites-background,5%);
 @badgeInvites_hover-border:         @badgeInvites_hover-background;
-@badgeInvites-color:                @color-white;
-@badgeInvites_hover-color:          @badgeInvites-color;
+@badgeInvites_hover-color:          @golden-100;
 
 
 //  ============================================================================
