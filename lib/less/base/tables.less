@@ -25,14 +25,13 @@
 @tableCell-margin:                      @margin-double;
 
 //  -- Color Varibles
-@table-background:                      @color-white;
-@tableHeader-background:                @backgroundColor-grayLight;
-@tableHeader-border:                    @borderColor-grayDark;
-@tableCell-border:                      @borderColor-gray;
-@tableCell-background:                  @color-white;
-@tableCell_hover-background:            darken(@color-white,3%);
-@tableCell_hover-shadowInner-top:       @color-white;
-@tableCell_hover-shadowInner-bottom:    @color-white;
+@table-background:                      fade(@gray-100,0%);
+@tableHeader-border:                    @gray-500;
+@tableCell-border:                      @gray-200;
+@tableCell-background:                  fade(@gray-100,0%);
+@tableCell_hover-background:            fade(@gray-100,30%);
+@tableCell_hover-shadowInner-top:       @white;
+@tableCell_hover-shadowInner-bottom:    @white;
 
 
 //  ============================================================================
@@ -173,23 +172,4 @@ table, .table {
 //  -- Column Sizes
 th, td {
     &.-checkbox { width: 2em; }
-}
-
-
-// Specific table styles
-.data-table-referrers {
-  thead th { background-color: @color-white; }
-
-  // Hide extra data rows until desired.
-  tr.data-more { display: none; }
-}
-
-// Column Widths
-// We sometimes want the ability to limit the width of a table column
-.l-dt-col-sm  { width: 15%; }
-.l-dt-col-med { width: 25%; }
-
-td.empty, .no-referrer {
-  font-style: italic;
-  opacity: 0.75;
 }
