@@ -27,8 +27,9 @@
     background-repeat: no-repeat;
 
     display: inline-block;
-    content: "";
     text-indent: -9999px;
+    overflow: hidden;
+    font: 0/0 @fontFamily-sans;
 }
 
 
@@ -43,6 +44,13 @@
             background-position: 0 0;
             width: 6px;
             height: 9px;
+        }
+
+        &-downArrow {
+            background-position: 0 0;
+            width: 6px;
+            height: 9px;
+            .transform(rotate(270deg));
         }
 
         //  Link: Outbound

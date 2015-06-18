@@ -1,0 +1,107 @@
+//
+//  STACK OVERFLOW CAREERS
+//  http://careers.stackoverflow.com
+//
+//  Modules — Cards
+//
+//  TABLE OF CONTENTS
+//  • VARIABLES
+//  • BASE STYLE
+//  • JOB LISTINGS
+//  • COMPANY PAGES
+//
+//  ============================================================================
+//  $ VARIABLES
+//  ----------------------------------------------------------------------------
+@card-background:                   @white;
+@card-border:                       @gray-200;
+@card-meta-color:                   @gray-400;
+@card-metaStrong-color:             @gray-600;
+@card-stats-background:             fade(@gray-100,50%);
+@card-stats-color:                  @gray-600;
+@card-stats_small-color:            @gray-500;
+@card-notice-background:            @yellow-100;
+@card-notice-border:                spin(desaturate(lighten(@yellow,32%),76%),-2);
+@card-notice-color:                 spin(desaturate(darken(@yellow,16%),92%),-1);
+
+
+//  ============================================================================
+//  $ BASE STYLES
+//  ----------------------------------------------------------------------------
+.cards {
+    background-color: @card-background;
+    border: 1px solid @card-border;
+    border-radius: @borderRadius-base;
+
+    // Type Styles
+    .-title {
+        margin-bottom: 4px;
+        .fontSize(m);
+        .lineHeight(tight);
+
+        > a { color: @link-color; }
+    }
+    .-meta {
+        margin-bottom: 0;
+        .fontSize(s);
+        .lineHeight(tight);
+        color: @card-meta-color;
+
+        strong {
+            .fontWeight(4);
+            color: @card-metaStrong-color;
+        }
+    }
+
+    > header, .-stats, .-notice { padding: @padding-double - @padding-half; }
+
+    // Stats Area
+    .-stats {
+        padding-top: @padding-base + 2;
+        background-color: @card-stats-background;
+        border-top: 1px solid @card-border;
+
+        .-label, .-number {
+            color: @card-stats-color;
+            .fontWeight(7);
+
+            > small {
+                color: @card-stats_small-color;
+                .fontSize(s);
+                .fontWeight(4);
+            }
+        }
+        .-label { .fontSize(base); }
+        .-number {
+            display: inline-block;
+            margin-right: @margin-base;
+            .fontSize(xl);
+            .lineHeight(tighter);
+            letter-spacing: -1px;
+
+            > small {
+                display: block;
+                letter-spacing: 0;
+            }
+        }
+    }
+
+    //  Notices
+    .-notice {
+        padding-top: @padding-half + 4 ;
+        padding-bottom: @padding-half + 4;
+        background-color: @card-notice-background;
+        border-top: 1px solid @card-notice-border;
+        border-bottom: 1px solid @card-notice-border;
+        color: @card-notice-color;
+
+        & + .-stats { border-top-color: transparent; }
+    }
+}
+
+// Button Dropdown
+.popout {
+    position: absolute;
+    top: 2px;
+    right: 0;
+}
