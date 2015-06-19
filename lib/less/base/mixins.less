@@ -110,6 +110,16 @@
             transform: @transform;
 }
 
+//  ===========================================================================
+//  $ GRADIENTS
+//  ---------------------------------------------------------------------------
+.gradientLinear(@gradientStart, @gradientEnd) {
+    background-image: -webkit-linear-gradient(left, @gradientStart, @gradientEnd);      // Safari 5.1, iOS 5.0-6.1, Chrome 10-25, Android 4.0-4.3
+    background-image:      -o-linear-gradient(left, @gradientStart, @gradientEnd);      // Opera 11.1 - 12
+    background-image:         linear-gradient(to bottom, @gradientStart, @gradientEnd);  // Opera 15+, Chrome 25+, IE 10+, Firefox 16+, Safari 6.1+, iOS 7+, Android 4.4+
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@gradientStart),argb(@gradientEnd))); // IE9 and down
+}
+
 
 //  ============================================================================
 //  $ CLEARFIX

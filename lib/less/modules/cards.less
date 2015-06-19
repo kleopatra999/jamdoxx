@@ -15,20 +15,24 @@
 //  ----------------------------------------------------------------------------
 @card-background:                   @white;
 @card-border:                       @gray-200;
+@card-padding:                      @padding-double - @padding-half;
 @card-meta-color:                   @gray-400;
 @card-metaStrong-color:             @gray-600;
-@card-stats-background:             fade(@gray-100,50%);
+@card-highlight-background:         fade(@gray-100,50%);
 @card-stats-color:                  @gray-600;
 @card-stats_small-color:            @gray-500;
 @card-notice-background:            @yellow-100;
 @card-notice-border:                spin(desaturate(lighten(@yellow,32%),76%),-2);
 @card-notice-color:                 spin(desaturate(darken(@yellow,16%),92%),-1);
+@card-pages-logo-border:            @white;
+@card-pages-cover-height:           120px;
+@card-pages-logo-size:              72px;
 
 
 //  ============================================================================
 //  $ BASE STYLES
 //  ----------------------------------------------------------------------------
-.cards {
+.card {
     background-color: @card-background;
     border: 1px solid @card-border;
     border-radius: @borderRadius-base;
@@ -53,13 +57,9 @@
         }
     }
 
-    > header, .-stats, .-notice { padding: @padding-double - @padding-half; }
-
     // Stats Area
     .-stats {
-        padding-top: @padding-base + 2;
-        background-color: @card-stats-background;
-        border-top: 1px solid @card-border;
+        padding: @padding-double - @padding-half;
 
         .-label, .-number {
             color: @card-stats-color;
@@ -74,7 +74,7 @@
         .-label { .fontSize(base); }
         .-number {
             display: inline-block;
-            margin-right: @margin-base;
+            margin-right: @margin-double;
             .fontSize(xl);
             .lineHeight(tighter);
             letter-spacing: -1px;
@@ -88,20 +88,84 @@
 
     //  Notices
     .-notice {
+        padding-left: @card-padding;
+        padding-right: @card-padding;
         padding-top: @padding-half + 4 ;
         padding-bottom: @padding-half + 4;
         background-color: @card-notice-background;
         border-top: 1px solid @card-notice-border;
         border-bottom: 1px solid @card-notice-border;
         color: @card-notice-color;
-
-        & + .-stats { border-top-color: transparent; }
     }
 }
 
-// Button Dropdown
-.popout {
-    position: absolute;
-    top: 2px;
-    right: 0;
+//  ============================================================================
+//  $  JOB LISTINGS
+//  ----------------------------------------------------------------------------
+.card.-jobs {
+    > header { padding: @card-padding; }
+
+    .-stats {
+        padding-top: @padding-base + 2;
+        background-color: @card-highlight-background;
+        border-top: 1px solid @card-border;
+    }
+    .-notice + .-stats { border-top-color: transparent; }
+}
+
+//  ============================================================================
+//  $  COMPANY PAGES
+//  ----------------------------------------------------------------------------
+.card.-pages {
+    padding: 3px;
+
+    > header {
+        position: relative;
+        text-align: center;
+    }
+    .-title { .fontSize(l); }
+
+    // Position Cover Photo
+    .-cover {
+        position: relative;
+        height: @card-pages-cover-height;
+        width: 100%;
+        background-position: center 90%;
+        background-repeat: no-repeat;
+        background-clip: border-box;
+        background-size: 110%;
+
+        // Gradient Overlay
+        &:after {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 50%;
+            content: "";
+            .gradientLinear(fade(@black,0%),fade(@black,30%));
+        }
+    }
+
+    // Position Logo
+    .-logo {
+        position: absolute;
+        top: 0;
+        margin-top: @card-pages-cover-height - (@card-pages-logo-size / 2);
+        width: 100%;
+
+        > img {
+            border: 4px solid @card-pages-logo-border;
+            width: @card-pages-logo-size;
+            height: @card-pages-logo-size;
+        }
+    }
+
+    // Company Information
+    .-info {
+        margin-top: 3px;
+        padding: @card-padding;
+        padding-top: @card-padding * 2;
+        background-color: @card-highlight-background;
+    }
 }
