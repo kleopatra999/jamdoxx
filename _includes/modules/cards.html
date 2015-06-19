@@ -11,14 +11,14 @@
         <h2 class="_subSection">Job Listings</h2>
         <div class="exampleBlock">
             <dl class="_rows">
-                <dt class="_label">Cards, <code>.card .-jobs</code></dt>
+                <dt class="_label">Cards, <code>.card.-jobs</code></dt>
                 <dd class="_example">
                     <div class="-row _gutter">
                         <div class="card -jobs -col6">
                             <header class="-row">
                                 <div class="-col11">
                                     <h1 class="-title"><a href="#">Senior Product Designer</a></h1>
-                                    <p class="-meta">Owned by <strong>Pieter DePree</strong> &bullet; Expires <strong>June 26</strong></p>
+                                    <p class="-meta">Owned by <strong>Pieter DePree</strong> &bullet; Expires <strong>Jun. 26</strong></p>
                                 </div>
                                 <div class="-col1 _textRight">
                                     <div class="popout">
@@ -71,29 +71,50 @@
         <h2 class="_subSection">Company Pages</h2>
         <div class="exampleBlock">
             <dl class="_rows">
-                <dt class="_label">Cards, <code>.card .-pages</code></dt>
+                <dt class="_label">Cards, <code>.card.-pages._stacked</code> <code>.card.-pages._full</code></dt>
                 <dd class="_example">
                     <div class="-row">
-                        <div class="card -pages -col6">
-                            <header class="-row">
-                                <div class="-cover" style="background-image: url('lib/images/photos/photo-summerStack.jpg')"></div>
+                        <div class="card -pages _stacked -col6">
+                            <div class="-cover" style="background-image: url('lib/images/photos/photo-summerStack.jpg')"></div>
+                            <div class="-content">
                                 <div class="-logo"><img src="lib/images/logos/logo-SO_glyph.png" alt="Stack Overflow"></div>
                                 <div class="-info">
                                     <h1 class="-title"><a href="">Stack Overflow</a></h1>
-                                    <p class="-meta">Owned by <strong>Will Cole</strong> &bullet; Updated <strong>February 15, 2015</strong></p>
+                                    <p class="-meta">Owned by <strong>Will Cole</strong> &bullet; Updated <strong>Feb. 15</strong></p>
                                 </div>
-                            </header>
-                            <section class="-stats -row">
-                                <div class="-col10">
-                                    <div class="-label">Stats <small>last 30 days</small></div>
-                                    <div class="-number">3817 <small>Views</small></div>
-                                    <div class="-number">399 <small>Applications</small></div>
+                                <div class="-stats -row">
+                                    <div>
+                                        <div class="-label">Stats <small>last 30 days</small></div>
+                                        <div class="-number">3817 <small>Views</small></div>
+                                        <div class="-number">399 <small>Applications</small></div>
+                                    </div>
+                                    <div>
+                                        <div class="-label">Jobs</div>
+                                        <div class="-number">3</div>
+                                    </div>
                                 </div>
-                                <div class="-col2">
-                                    <div class="-label">Jobs</div>
-                                    <div class="-number">3</div>
+                            </div>
+                        </div>
+                        <div class="card -pages _full -col12">
+                            <div class="-cover" style="background-image: url('lib/images/photos/photo-summerStack.jpg')"></div>
+                            <div class="-content">
+                                <div class="-logo"><img src="lib/images/logos/logo-SO_glyph.png" alt="Stack Overflow"></div>
+                                <div class="-info">
+                                    <h1 class="-title"><a href="">Stack Overflow</a></h1>
+                                    <p class="-meta">Owned by <strong>Will Cole</strong> &bullet; Updated <strong>Feb. 15</strong></p>
                                 </div>
-                            </section>
+                                <div class="-stats -row">
+                                    <div>
+                                        <div class="-label">Stats <small>last 30 days</small></div>
+                                        <div class="-number">3817 <small>Views</small></div>
+                                        <div class="-number">399 <small>Applications</small></div>
+                                    </div>
+                                    <div>
+                                        <div class="-label">Jobs</div>
+                                        <div class="-number">3</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </dd>
@@ -101,26 +122,30 @@
         </div>
         <div class="codeBlock">
 {% highlight html linenos %}
-<div class="card -pages">
-    <header class="-row">
-        <div class="-cover" style="background-image: url('photo.jpg')"></div>
-        <div class="-logo"><img src="logo-SO_glyph.png" alt="Stack Overflow"></div>
+<div class="card -pages _stacked">
+    <div class="-cover" style="background-image: url('photo.jpg')"></div>
+    <div class="-content">
+        <div class="-logo"><img src="logo.png" alt="Stack Overflow"></div>
         <div class="-info">
             <h1 class="-title"><a href="">Stack Overflow</a></h1>
             <p class="-meta">Owned by <strong>Will Cole</strong> ... </p>
         </div>
-    </header>
-    <section class="-stats -row">
-        <div class="-col10">
-            <div class="-label">Stats <small>last 30 days</small></div>
-            <div class="-number">3817 <small>Views</small></div>
-            <div class="-number">399 <small>Applications</small></div>
+        <div class="-stats -row">
+            <div>
+                <div class="-label">Stats <small>last 30 days</small></div>
+                <div class="-number">3817 <small>Views</small></div>
+                <div class="-number">399 <small>Applications</small></div>
+            </div>
+            <div>
+                <div class="-label">Jobs</div>
+                <div class="-number">3</div>
+            </div>
         </div>
-        <div class="-col2">
-            <div class="-label">Jobs</div>
-            <div class="-number">3</div>
-        </div>
-    </section>
+    </div>
+</div>
+
+<div class="card -pages _full">
+    ...
 </div>
 {% endhighlight %}
         </div>
