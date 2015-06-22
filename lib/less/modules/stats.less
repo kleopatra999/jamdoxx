@@ -1,0 +1,60 @@
+//
+//  STACK OVERFLOW CAREERS
+//
+//  Modules — Reportings: Stats
+//
+//  TABLE OF CONTENTS
+//  • VARIABLES
+//  • BASE STYLES
+//
+//  ============================================================================
+//  $ VARIABLES
+//  ----------------------------------------------------------------------------
+@stats-color:                   @gray-600;
+@stats-label-color:             @gray-500;
+@stats_primary-color:           @gray-700;
+@stats_primary-label-color:     @gray-600;
+
+
+//  ============================================================================
+//  $ BASE STYLES
+//  ----------------------------------------------------------------------------
+.stats {
+    .-row {
+        &:extend(.clearfix all);
+        margin-bottom: @margin-double;
+
+        .-item {
+            float: left;
+            margin-right: @margin-base;
+        }
+    }
+
+    // Type
+    .-number {
+        margin-bottom: 2px;
+        .fontSize(l);
+        .fontWeight(7);
+        .lineHeight(tightest);
+        color: @stats-color;
+        letter-spacing: -1px;
+    }
+    .-label {
+        margin-bottom: 0;
+        .fontSize(s);
+        color: @stats-label-color;
+    }
+
+    // Primary
+    .-item._primary {
+        .-number {
+            .fontRem(64);
+            line-height: 80%;
+            color: @stats_primary-color;
+        }
+        .-label {
+            .fontRem(14);
+            color: @stats_primary-label-color;
+        }
+    }
+}

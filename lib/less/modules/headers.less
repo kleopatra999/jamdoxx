@@ -1,0 +1,66 @@
+//
+//  STACK OVERFLOW CAREERS
+//
+//  Modules — UI: Headers
+//
+//  TABLE OF CONTENTS
+//  • VARIABLES
+//  • BASE STYLES
+//
+//  ============================================================================
+//  $   VARIABLES
+//  ----------------------------------------------------------------------------
+@header-page-border:            @gray-200;
+@header-pageTitle-color:        @orange-700;
+@header-section-border:         lighten(@gray-200,2%);
+@header-sectionTitle-color:     @gray-600;
+
+
+//  ============================================================================
+//  $   BASE STYLES
+//  ----------------------------------------------------------------------------
+header, .header {
+    &.-page, &.-section {
+        display: block;
+        width: 100%;
+
+        .-title { margin-bottom: 0; }
+    }
+}
+
+//  ============================================================================
+//  $  PAGE LEVEL STYLES
+//  ----------------------------------------------------------------------------
+header.-page, .header.-page {
+    margin-bottom: @margin-double;
+    padding-top: @padding-double;
+    padding-bottom: @padding-double;
+    border-bottom: 1px solid @header-page-border;
+
+    .-title {
+        .fontSize(l);
+        .lineHeight(tightest);
+        color: @header-pageTitle-color;
+    }
+}
+
+//  ============================================================================
+//  $  SECTION LEVEL STYLES
+//  ----------------------------------------------------------------------------
+header.-section, .header.-section {
+    margin-top: @margin-base;
+    margin-bottom: @margin-base;
+
+    .-title {
+        .fontRem(21);
+        .lineHeight(tighter);
+        color: @header-sectionTitle-color;
+    }
+
+    > ._border {
+        margin-bottom: @margin-base - 3;
+        border-bottom: 1px solid @header-section-border;
+
+        .-title { .lineHeight(loosest); }
+    }
+}
