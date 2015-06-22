@@ -190,7 +190,6 @@
     }
     .-stats { padding-top: @card-padding; }
 }
-
 //  -- Full Width Company Pages
 .card.-pages._full {
     .-content {
@@ -216,5 +215,28 @@
     .-logo {
         top: @card-padding;
         left: -(@card-pages-logo-size - 4);
+    }
+}
+
+//  -- Published
+.card.is-published {
+    .icon.-ui-checkmark {
+        position: absolute;
+        top: 11px;
+        left: 10px;
+        height: 14px;
+        width: 18px;
+        z-index: @zindex-popover + 1;
+    }
+    &:after {
+        position: absolute;
+        left: 3px;
+        top: 3px;
+        width: 0;
+        height: 0;
+        content: "";
+        border-top: 48px solid @green-600;
+        border-right: 50px solid transparent;
+        z-index: @zindex-popover;
     }
 }
