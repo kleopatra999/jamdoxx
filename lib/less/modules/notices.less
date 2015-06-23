@@ -1,0 +1,107 @@
+//
+//  STACK OVERFLOW CAREERS
+//  http://careers.stackoverflow.com
+//
+//  Last updated October 7, 2014
+//
+//  Modules - Navigation, Sidebar
+//
+//  TABLE OF CONTENTS
+//  • VARIABLES
+//  • BASE STYLE
+//
+//  ============================================================================
+//  $ VARIABLES
+//  ----------------------------------------------------------------------------
+@notice-background:                 @gray-100;
+@notice-border:                     lighten(@gray-300,5%);
+@notice-color:                      lighten(@gray-800,10%);
+@notice-info-background:            lighten(@azure-100,5%);
+@notice-info-border:                desaturate(darken(@azure-200,2%),8%);
+@notice-info-color:                 desaturate(darken(@azure-700,3%),22%);
+@notice-success-background:         lighten(@green-100,4%);
+@notice-success-border:             desaturate(lighten(@green-700,28%),12%);
+@notice-success-color:              desaturate(darken(@green-700,19%),44%);
+@notice-warning-background:         @yellow-100;
+@notice-warning-border:             desaturate(lighten(@yellow-700,27%),70%);
+@notice-warning-color:              @gray-600;
+@notice-danger-background:          lighten(@red-100,1%);
+@notice-danger-border:              desaturate(darken(@red-200,4%),57%);
+@notice-danger-color:               desaturate(darken(@red-700,5%),76%);
+@notice-dangerLink-color:           saturate(darken(@notice-danger-color,22%),10%);
+@notice-dangerLink_hover-color:     darken(@notice-dangerLink-color,10%);
+
+
+//  ============================================================================
+//  $ BASE STYLES
+//  ----------------------------------------------------------------------------
+.notice {
+    margin-bottom: @margin-double;
+    padding: @padding-base;
+    padding-left: @padding-base + 4;
+
+    color: @notice-color;
+    background-color: @notice-background;
+    border-color: @notice-border;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: @borderRadius-small;
+
+    p {
+        padding-top: 2px;
+        margin-bottom: 0;       // Reset paragraphs when inside notices
+        .fontSize(base);
+        .lineHeight(loosest);   // So it lines up with corresponding CTAs
+
+        > .icon {
+            position: relative;
+            margin-right: @margin-half;
+            top: 2px;
+        }
+    }
+}
+
+//  ============================================================================
+//  $ VARIATIONS
+//  ----------------------------------------------------------------------------
+.notice {
+    //  $$ Info
+    //  Just passing some info along
+    &.-info {
+        background-color: @notice-info-background; 
+        border-color: @notice-info-border;
+        color: @notice-info-color;
+    }
+
+    //  $$ Success
+    //  You did this thing correctly
+    &.-success {
+        background-color: @notice-success-background; 
+        border-color: @notice-success-border;
+        color: @notice-success-color;
+    }
+
+    //  $$ Warning
+    //  Um, you should be alerted about this.
+    &.-warning {
+        background-color: @notice-warning-background; 
+        border-color: @notice-warning-border;
+        color: @notice-warning-color;
+    }
+
+    //  $$ Danger
+    //  Something is seriously wrong now.
+    &.-danger {
+        background-color: @notice-danger-background;
+        border-color: @notice-danger-border;
+        color: @notice-danger-color;
+
+        //  Stylize links within paragraphs.
+        //  Buttons are typically not wrapped within <p>'s.
+        p > a, p > a:visited {
+            color: @notice-dangerLink-color;
+            text-decoration: underline;
+            &:hover, &._hover { color: @notice-dangerLink_hover-color; }
+        }
+    }
+}
