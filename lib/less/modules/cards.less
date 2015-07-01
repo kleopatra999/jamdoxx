@@ -21,9 +21,6 @@
 @card-highlight-background:         fade(@gray-100,50%);
 @card-stats-color:                  @gray-600;
 @card-stats_small-color:            @gray-500;
-@card-notice-background:            @yellow-100;
-@card-notice-border:                spin(desaturate(lighten(@yellow,32%),76%),-2);
-@card-notice-color:                 spin(desaturate(darken(@yellow,16%),92%),-1);
 @card-pages-logo-border:            @white;
 @card-pages-cover-height:           120px;
 @card-pages-logo-size:              72px;
@@ -98,15 +95,15 @@
     }
 
     //  Notices
-    .-notice {
+    .notice {
+        margin-bottom: 0;
         padding-left: @card-padding;
         padding-right: @card-padding;
         padding-top: @padding-half + 4 ;
         padding-bottom: @padding-half + 4;
-        background-color: @card-notice-background;
-        border-top: 1px solid @card-notice-border;
-        border-bottom: 1px solid @card-notice-border;
-        color: @card-notice-color;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
     }
 }
 
@@ -121,7 +118,7 @@
         background-color: @card-highlight-background;
         border-top: 1px solid @card-border;
     }
-    .-notice + .-stats { border-top-color: transparent; }
+    .notice + .-stats { border-top-color: transparent; }
 }
 
 //  ============================================================================

@@ -1,0 +1,91 @@
+//
+//  STACK OVERFLOW CAREERS
+//  http://careers.stackoverflow.com
+//
+//  Modules — Lists
+//
+//  TABLE OF CONTENTS
+//  • VARIABLES
+//  • BASE STYLE
+//
+//  ============================================================================
+//  $ VARIABLES
+//  ----------------------------------------------------------------------------
+@list-background:                   transparent;
+@list-border:                       @gray-200;
+@list-padding:                      ceil(@padding-double - @padding-half);
+@list-color_muted:                  @gray-600;
+@list-headerTitle-color:            @gray-500;
+
+
+//  ============================================================================
+//  $ BASE STYLES
+//  ----------------------------------------------------------------------------
+.list {
+    margin-bottom: @margin-double;
+
+    // Type Styles
+    .-title {
+        margin-bottom: 2px;
+        .fontSize(m);
+        .lineHeight(tight);
+        color: @list-color_muted;
+        > a { color: @link-color; }
+
+        > .badge:first-of-type { margin-left: @list-padding / 5; }
+    }
+    .-meta {
+        margin-bottom: 0;
+        .fontSize(s);
+        .lineHeight(tight);
+        color: @card-meta-color;
+
+        strong {
+            .fontWeight(4);
+            color: @card-metaStrong-color;
+        }
+    }
+
+    //  Header
+    //  For when you need a list header
+    > header {
+        padding-bottom: @list-padding;
+        .-title { color: @list-headerTitle-color; }
+    }
+
+    //  Individual Row Items
+    > .-item {
+        position: relative;
+        padding-top: @list-padding / 2;
+        padding-bottom: @list-padding / 2;
+        background-color: @list-background;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: transparent;
+    }
+}
+
+//  ============================================================================
+//  $ ALTERNATE STYLES
+//  ----------------------------------------------------------------------------
+.list {
+    //  --  Borders
+    //  Adds a border to all row items except the first row
+    &._border {
+        > .-item { 
+            border-top-color: @list-border;
+            &:first-of-type { border-top-color: transparent; }
+        }
+        //  Except when we have a header, and then we want a border on the top row
+        header + .-item:first-of-type { border-top-color: @list-border; }
+    }
+
+    //  -- Thicker
+    //  Thicken each item's padding 
+    &._thicker > .-item {
+        padding-top: @list-padding;
+        padding-bottom: @list-padding;
+
+        .-title { margin-bottom: 4px; }
+    }
+}

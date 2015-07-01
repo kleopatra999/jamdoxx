@@ -79,6 +79,38 @@
 @badgeInvites_hover-border:         @badgeInvites_hover-background;
 @badgeInvites_hover-color:          @golden-100;
 
+//  -- Note
+@badgeNote-background:              spin(desaturate(darken(@blue-700,4%),26%),2);
+@badgeNote_hover-background:        darken(@badgeNote-background,5%);
+@badgeNote-border:                  @badgeNote-background;
+@badgeNote_hover-border:            @badgeNote_hover-background;
+@badgeNote-color:                   @white;
+@badgeNote_hover-color:             fade(@badgeNote-color,98%);
+
+//  -- Mod Count
+@badgeMod-background:               spin(desaturate(darken(@blue-700,4%),26%),2);
+@badgeMod_hover-background:         darken(@badgeMod-background,5%);
+@badgeMod-border:                   @badgeMod-background;
+@badgeMod_hover-border:             @badgeMod_hover-background;
+@badgeMod-color:                    @white;
+@badgeMod_hover-color:              fade(@badgeMod-color,98%);
+
+//  -- Admin
+@badgeAdmin-background:             @white;
+@badgeAdmin_hover-background:       @badgeAdmin-background;
+@badgeAdmin-border:                 @gray-200;
+@badgeAdmin_hover-border:           darken(@badgeAdmin-border,5%);
+@badgeAdmin-color:                  @gray-500;
+@badgeAdmin_hover-color:            darken(@badgeAdmin-color,2%);
+
+//  -- Owner
+@badgeOwner-background:             @green-700;
+@badgeOwner_hover-background:       darken(@badgeOwner-background,3%);
+@badgeOwner-border:                 @badgeOwner-background;
+@badgeOwner_hover-border:           @badgeOwner_hover-background;
+@badgeOwner-color:                  @white;
+@badgeOwner_hover-color:            fade(@badgeOwner-color,98%);
+
 
 //  ============================================================================
 //  $ BASE STYLE
@@ -253,6 +285,60 @@
             background-color: @badgeInvites_hover-background;
             border-color: @badgeInvites_hover-border;
             color: @badgeInvites_hover-color;
+        }
+    }
+
+    //  -- Note Badge
+    &.-note {
+        background-color: @badgeNote-background;
+        border-color: @badgeNote-border;
+        color: @badgeNote-color;
+
+        &:hover, &._hover {
+            background-color: @badgeNote_hover-background;
+            border-color: @badgeNote_hover-border;
+            color: @badgeNote_hover-color;
+        }
+    }
+
+    //  -- Mod
+    &.-mod {
+        background-color: @badgeMod-background;
+        border-color: @badgeMod-border;
+        color: @badgeMod-color;
+
+        &:hover, &._hover {
+            background-color: @badgeMod_hover-background;
+            border-color: @badgeMod_hover-border;
+            color: @badgeMod_hover-color;
+        }
+    }
+
+    //  -- Admin Flag
+    &.-admin {
+        background-color: @badgeAdmin-background;
+        border-color: @badgeAdmin-border;
+        border-width: 1px;
+        color: @badgeAdmin-color;
+
+        &:hover, &._hover {
+            background-color: @badgeAdmin_hover-background;
+            border-color: @badgeAdmin_hover-border;
+            color: @badgeAdmin_hover-color;
+        }
+    }
+
+    //  -- Product Owner Flag
+    &.-owner {
+        background-color: @badgeOwner-background;
+        border-color: @badgeOwner-border;
+        border-width: 1px;
+        color: @badgeOwner-color;
+
+        &:hover, &._hover {
+            background-color: @badgeOwner_hover-background;
+            border-color: @badgeOwner_hover-border;
+            color: @badgeOwner_hover-color;
         }
     }
 }
