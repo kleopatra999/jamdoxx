@@ -21,7 +21,15 @@
 //  ============================================================================
 //  $ BASE STYLES
 //  ----------------------------------------------------------------------------
-.list {
+//  Reset UL/LI
+.list,
+.list > li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.list {    
     margin-bottom: @margin-double;
 
     // Type Styles
@@ -48,8 +56,8 @@
 
     //  Header
     //  For when you need a list header
-    > header {
-        padding-bottom: @list-padding;
+    > .-header {
+        padding-bottom: @list-padding / 2;
         .-title { color: @list-headerTitle-color; }
     }
 
@@ -77,15 +85,24 @@
             &:first-of-type { border-top-color: transparent; }
         }
         //  Except when we have a header, and then we want a border on the top row
-        header + .-item:first-of-type { border-top-color: @list-border; }
+        > .-header + .-item:first-of-type {
+            padding-top: @list-padding;
+            border-top-color: @list-border;
+        }
     }
 
     //  -- Thicker
     //  Thicken each item's padding 
-    &._thicker > .-item {
-        padding-top: @list-padding;
-        padding-bottom: @list-padding;
+    &._thicker {
+        > .-item {
+            padding-top: @list-padding;
+            padding-bottom: @list-padding;
 
-        .-title { margin-bottom: 4px; }
+            .-title { margin-bottom: 4px; }
+        }
+        > .-header {
+            padding-bottom: @list-padding;
+            + .-item:first-of-type { padding-top: @list-padding + (@list-padding / 2); }
+        }
     }
 }
