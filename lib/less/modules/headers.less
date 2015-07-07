@@ -67,7 +67,6 @@ header, .header {
             padding-bottom: @padding-double;
             .fontSize(l);
             .lineHeight(tightest);
-            color: @header-page-title-color;
 
             + .btn { margin-top: -(@margin-half); }
         }
@@ -79,6 +78,11 @@ header, .header {
                 margin-top: 0;
                 padding-top: @padding-double;
                 padding-bottom: @padding-base;
+                
+                //  This feels really fragile. Basically we only want the orange color
+                //  for "Section Titles" but I'm hesitant about creating a class just
+                //  yet for this. Let's so how far this takes us.
+                color: @header-page-title-color;
             }
         }
     }
