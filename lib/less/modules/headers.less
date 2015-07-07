@@ -10,10 +10,10 @@
 //  ============================================================================
 //  $   VARIABLES
 //  ----------------------------------------------------------------------------
+@header-border:                 lighten(@header-page-border,2%);
 @header-page-border:            @gray-200;
-@header-pageTitle-color:        @orange-700;
-@header-section-border:         lighten(@gray-200,2%);
-@header-sectionTitle-color:     @gray-600;
+@header-title-color:            @gray-600;
+@header-page-title-color:       @orange-700;
 
 
 //  ============================================================================
@@ -22,45 +22,69 @@
 header, .header {
     &.-page, &.-section {
         display: block;
+        margin-top: @margin-base;
+        margin-bottom: @margin-base;
         width: 100%;
 
-        .-title { margin-bottom: 0; }
+        .-title {
+            margin-bottom: 0;
+            .fontRem(21);
+            .lineHeight(tighter);
+            color: @header-title-color;
+        }
     }
+    // Reset bottom margins
+    p._large { margin-bottom: 0; }
 }
 
-//  ============================================================================
-//  $  PAGE LEVEL STYLES
-//  ----------------------------------------------------------------------------
-header.-page, .header.-page {
-    margin-bottom: @margin-double;
-    padding-top: @padding-double;
-    padding-bottom: @padding-double;
-    border-bottom: 1px solid @header-page-border;
-
-    .-title {
-        .fontSize(l);
-        .lineHeight(tightest);
-        color: @header-pageTitle-color;
-    }
-}
 
 //  ============================================================================
-//  $  SECTION LEVEL STYLES
+//  $  ADDITIVE STYLES
 //  ----------------------------------------------------------------------------
-header.-section, .header.-section {
-    margin-top: @margin-base;
-    margin-bottom: @margin-base;
-
-    .-title {
-        .fontRem(21);
-        .lineHeight(tighter);
-        color: @header-sectionTitle-color;
+header, .header {
+    &.-page, &.-section {
+        //  $$  BORDER
+        //  For when you want to add a bottom border to a row in the header.
+        //  This needs to be applied to a child <div> element within the header.
+        ._border {
+            margin-bottom: @margin-base - 3;
+            padding-bottom: @padding-base;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: @header-border;
+        }
     }
 
-    > ._border {
-        margin-bottom: @margin-base - 3;
-        border-bottom: 1px solid @header-section-border;
+    //  $$  PAGE ONLY STYLES
+    &.-page {
+        margin-top: 0;
+        margin-bottom: @margin-double;
 
-        .-title { .lineHeight(loosest); }
+        .-title {
+            display: inline-block;
+            margin-right: @margin-half;
+            margin-top: @margin-base;
+            padding-bottom: @padding-double;
+            .fontSize(l);
+            .lineHeight(tightest);
+            color: @header-page-title-color;
+
+            + .btn { margin-top: -(@margin-half); }
+        }
+
+        ._border {
+            border-bottom-color: @header-page-border;
+
+            .-title {
+                margin-top: 0;
+                padding-top: @padding-double;
+                padding-bottom: @padding-base;
+            }
+        }
+    }
+
+    //  $$  SECTION ONLY STYLES
+    &.-section {
+        ._border .-title { .lineHeight(loosest); }
     }
 }
