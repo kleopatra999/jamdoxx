@@ -33,7 +33,7 @@
 //  ============================================================================
 //  $2 VARIABLES
 //  ----------------------------------------------------------------------------
-@body-background:               lighten(@gray-900,3%);
+@body-background:               @black-900;
 @content-background:            @white;
 
 
@@ -148,9 +148,9 @@ body        { background-color: @body-background; }
 //  $4 TYPE
 //  ----------------------------------------------------------------------------
 //  -- Icon colors
-i.fa-check-circle-o { color: @color-green; }
-i.fa-warning { color: @color-yellow; }
-i.fa-times { color: @color-red; }
+i.fa-check-circle-o { color: @green-400; }
+i.fa-warning { color: @yellow-500; }
+i.fa-times { color: @red-500; }
 
 //  -- Make <p>'s slightly larger for easier reading.
 p, .text, ul, li {
@@ -191,7 +191,7 @@ p, .text, ul, li {
     padding: 0.5em 2em;
     margin: 0;
 
-    background-color: @color-white;
+    background-color: @white;
     border-radius: @borderRadius-base @borderRadius-base 0 0;
     border: 1px solid @borderColor-grayLight;
 
@@ -247,6 +247,8 @@ p, .text, ul, li {
 
     //  $ Grid Example
     //  Used to showcase grid layouts and cells
+    @grid-background:   @orange-50;
+    @grid-border:       @orange-100;
     &.-grid {
         padding: 0;
         border: none;
@@ -255,8 +257,8 @@ p, .text, ul, li {
         .-row {
             margin-bottom: 1em;
             .-row {
-                background-color: lighten(@color-orange,42%);
-                border: 1px solid lighten(@color-orange,32%);
+                background-color: @grid-background;
+                border: 1px solid @grid-border;
                 margin-bottom: 0;
                 margin-top: -1px;
                 padding: 1.5em;
@@ -271,21 +273,21 @@ p, .text, ul, li {
                     height: auto;
                     p { &:extend(.exampleBlock.-grid>p all); }
                     &:last-of-type > p {
-                        border-right: 1px solid lighten(@color-orange,30%);
+                        border-right: 1px solid @grid-border;
                     }
                 }
             }
 
             > [class*="-col"]:last-of-type > p {
-                border-right: 1px solid lighten(@color-orange,30%);
+                border-right: 1px solid @grid-border;
             }
         }
 
         p {
             margin-bottom: 0;
             padding: 1em;
-            background-color: lighten(@color-orange,40%);
-            border: 1px solid lighten(@color-orange,30%);
+            background-color: @grid-background;
+            border: 1px solid @grid-border;
             border-right: none;
 
             .col1 & {
@@ -295,7 +297,7 @@ p, .text, ul, li {
         }
         code {
             padding: 0;
-            color: @color-grayDark;
+            color: @black-800;
             background-color: transparent;
         }
     }
@@ -309,7 +311,7 @@ p, .text, ul, li {
         letter-spacing: 0;
     }
 
-    blockquote._pull, .quote._pull { background-color: @color-white; }
+    blockquote._pull, .quote._pull { background-color: @white; }
 }
 
 dl._rows.-groups {
@@ -336,12 +338,24 @@ ul.exampleCards {
     text-align: center;
 
     .-item {
+        margin-bottom: @margin-double;
         padding: 0;
         list-style-type: none;
         text-align: left;
 
+        &.-col4 {
+            &:nth-of-type(3n) { padding-right: 0 !important; }
+            &:nth-of-type(3n + 1) { padding-left: 0 !important; }
+            &:last-of-type:not(:nth-of-type(3n)) { padding-right: 1em !important; }
+        }
+        &.-col3 {
+            &:nth-of-type(4n) { padding-right: 0 !important; }
+            &:nth-of-type(4n + 1) { padding-left: 0 !important; }
+            &:last-of-type:not(:nth-of-type(4n)) { padding-right: 1em !important; }
+        }
+
         .-title     { color: @white; }
-        .-weight    { color: @gray-700; }
+        .-weight    { color: @black-700; }
 
         code {
             background-color: transparent !important;
@@ -359,6 +373,7 @@ ul.exampleCards {
                 padding: 0 3px 3px 0;
                 .fontSize(s);
             }
+            code { font-size: 100%; }
         }
 
         .-stops {
@@ -366,21 +381,10 @@ ul.exampleCards {
             padding: 0;
 
             > div {
-                &:extend(.clearfix all);
-
                 padding: @padding-half @padding-base;
                 width: 100%;
 
-                h4, code { float: left; }
-                h4   {
-                    margin-bottom: 0;
-                    width: 25%;
-                }
-                code {
-                    text-align: right;
-                    width: 75%;
-                }
-
+                h4 { margin-bottom: 0; }
                 &:last-of-type { border-radius: 0 0 @borderRadius-base @borderRadius-base; }
             }
         }
@@ -396,10 +400,14 @@ ul.exampleCards {
     //  -- Customize card colors
     .-item {
         .orange {
-            background-color: @orange;
-            h4, code, td, strong { color: darken(@orange-900,25%); }
+            color: fade(@orange-800,50%);
+            background-color: @orange-400;
+            h3, h4 { color: @orange-900; }
+            code, td { color: @orange-800; }
+
 
             .-orange {
+                &50 { background-color: @orange-50; }
                 &100 { background-color: @orange-100; }
                 &200 { background-color: @orange-200; }
                 &300 { background-color: @orange-300; }
@@ -410,14 +418,51 @@ ul.exampleCards {
                 &800 { background-color: @orange-800; }
                 &900 { background-color: @orange-900; }
 
-                &900 { .-weight, code { color: darken(@orange-900,30%); } }
+                &700, &800, &900 { 
+                    h4 { color: @orange-100; }
+                    code { color: @orange-200; }
+                }
             }
         }
+        .black {
+            background-color: @black-900;
+            h4, code { color: @black-900; }
+            > header { 
+                h3 { color: @black-200; }
+                td, code { color: @black-300; }
+            }
+
+
+            .-black {
+                &50 { background-color: @black-50; }
+                &100 { background-color: @black-100; }
+                &200 { background-color: @black-200; }
+                &300 { background-color: @black-300; }
+                &400 { background-color: @black-400; }
+                &500 { background-color: @black-500; }
+                &600 { background-color: @black-600; }
+                &700 { background-color: @black-700; }
+                &800 { background-color: @black-800; }
+                &900 { background-color: @black-900; }
+
+                &700, &800, &900 { .-weight, code { color: @black-300; } }
+            }
+        }
+        .white {
+            background-color: @white;
+            > header {
+                border: 1px solid @black-200;
+                border-radius: @borderRadius-base;
+            }
+            h3 { color: @black-800; }
+            td { color: @black-600; }
+        }
         .blue {
-            background-color: @blue;
-            h4, code, td, strong { color: darken(@blue-900,25%); }
+            background-color: @blue-600;
+            h3, h4, code, td, strong { color: @blue-900; }
 
             .-blue {
+                &50 { background-color: @blue-50; }
                 &100 { background-color: @blue-100; }
                 &200 { background-color: @blue-200; }
                 &300 { background-color: @blue-300; }
@@ -428,51 +473,34 @@ ul.exampleCards {
                 &800 { background-color: @blue-800; }
                 &900 { background-color: @blue-900; }
 
-                &900 { .-weight, code { color: @blue-200; } }
+                &700, &800, &900 { .-weight, code { color: @blue-200; } }
             }
         }
-        .gray {
-            background-color: @gray;
-            h4, code { color: @gray-900; }
-            header td, header code { color: @gray-100; }
+        .powder {
+            background-color: @powder-200;
+            h3, h4, code, td, strong { color: @powder-800; }
 
-            .-gray {
-                &100 { background-color: @gray-100; }
-                &200 { background-color: @gray-200; }
-                &300 { background-color: @gray-300; }
-                &400 { background-color: @gray-400; }
-                &500 { background-color: @gray-500; }
-                &600 { background-color: @gray-600; }
-                &700 { background-color: @gray-700; }
-                &800 { background-color: @gray-800; }
-                &900 { background-color: @gray-900; }
+            .-powder {
+                &50 { background-color: @powder-50; }
+                &100 { background-color: @powder-100; }
+                &200 { background-color: @powder-200; }
+                &300 { background-color: @powder-300; }
+                &400 { background-color: @powder-400; }
+                &500 { background-color: @powder-500; }
+                &600 { background-color: @powder-600; }
+                &700 { background-color: @powder-700; }
+                &800 { background-color: @powder-800; }
+                &900 { background-color: @powder-900; }
 
-                &700 { .-weight, code { color: @gray-300; } }
-                &800 { .-weight, code { color: @gray-200; } }
-                &900 { .-weight, code { color: @gray-100; } }
-            }
-        }
-        .golden {
-            background-color: @golden;
-            .-title, h4, code, td, strong { color: darken(@golden-900,25%); }
-
-            .-golden {
-                &100 { background-color: @golden-100; }
-                &200 { background-color: @golden-200; }
-                &300 { background-color: @golden-300; }
-                &400 { background-color: @golden-400; }
-                &500 { background-color: @golden-500; }
-                &600 { background-color: @golden-600; }
-                &700 { background-color: @golden-700; }
-                &800 { background-color: @golden-800; }
-                &900 { background-color: @golden-900; }
+                &700, &800, &900 { .-weight, code { color: @powder-200; } }
             }
         }
         .green {
-            background-color: @green;
-            .-title, h4, code, td, strong { color: darken(@green-900,15%); }
+            background-color: @green-400;
+            h3, h4, code, td, strong { color: @green-900; }
 
             .-green {
+                &50 { background-color: @green-50; }
                 &100 { background-color: @green-100; }
                 &200 { background-color: @green-200; }
                 &300 { background-color: @green-300; }
@@ -483,35 +511,34 @@ ul.exampleCards {
                 &800 { background-color: @green-800; }
                 &900 { background-color: @green-900; }
 
-                &800 { .-weight, code { color: darken(@green-900,18%); } }
-                &900 { .-weight, code { color: darken(@green-900,21%); } }
+                &700, &800, &900 { .-weight, code { color: @green-300; } }
             }
         }
-        .azure {
-            background-color: @azure;
-            h4, code { color: darken(@azure-900,25%); }
-            header td, header code { color: @azure-100; }
+        .forest {
+            background-color: @forest;
+            .-title, h4, code, td, strong { color: @forest-800; }
 
-            .-azure {
-                &100 { background-color: @azure-100; }
-                &200 { background-color: @azure-200; }
-                &300 { background-color: @azure-300; }
-                &400 { background-color: @azure-400; }
-                &500 { background-color: @azure-500; }
-                &600 { background-color: @azure-600; }
-                &700 { background-color: @azure-700; }
-                &800 { background-color: @azure-800; }
-                &900 { background-color: @azure-900; }
+            .-forest {
+                &50 { background-color: @forest-50; }
+                &100 { background-color: @forest-100; }
+                &200 { background-color: @forest-200; }
+                &300 { background-color: @forest-300; }
+                &400 { background-color: @forest-400; }
+                &500 { background-color: @forest-500; }
+                &600 { background-color: @forest-600; }
+                &700 { background-color: @forest-700; }
+                &800 { background-color: @forest-800; }
+                &900 { background-color: @forest-900; }
 
-                &800 { .-weight, code { color: @azure-300; } }
-                &900 { .-weight, code { color: @azure-200; } }
+                &700, &800, &900 { .-weight, code { color: @forest-300; } }
             }
         }
         .yellow {
             background-color: @yellow;
-            .-title, h4, code, td, strong { color: darken(@yellow-900,30%); }
+            .-title, h4, code, td, strong { color: @yellow-900; }
 
             .-yellow {
+                &50 { background-color: @yellow-50; }
                 &100 { background-color: @yellow-100; }
                 &200 { background-color: @yellow-200; }
                 &300 { background-color: @yellow-300; }
@@ -521,29 +548,16 @@ ul.exampleCards {
                 &700 { background-color: @yellow-700; }
                 &800 { background-color: @yellow-800; }
                 &900 { background-color: @yellow-900; }
-            }
-        }
-        .turquoise {
-            background-color: @turquoise;
-            .-title, h4, code, td, strong { color: darken(@turquoise-900,25%); }
 
-            .-turquoise {
-                &100 { background-color: @turquoise-100; }
-                &200 { background-color: @turquoise-200; }
-                &300 { background-color: @turquoise-300; }
-                &400 { background-color: @turquoise-400; }
-                &500 { background-color: @turquoise-500; }
-                &600 { background-color: @turquoise-600; }
-                &700 { background-color: @turquoise-700; }
-                &800 { background-color: @turquoise-800; }
-                &900 { background-color: @turquoise-900; }
+                &700, &800, &900 { .-weight, code { color: @yellow-200; } }
             }
         }
         .red {
             background-color: @red;
-            .-title, h4, code, td, strong { color: darken(@red-900,25%); }
+            .-title, h4, code, td, strong { color: @red-900; }
 
             .-red {
+                &50 { background-color: @red-50; }
                 &100 { background-color: @red-100; }
                 &200 { background-color: @red-200; }
                 &300 { background-color: @red-300; }
@@ -554,9 +568,67 @@ ul.exampleCards {
                 &800 { background-color: @red-800; }
                 &900 { background-color: @red-900; }
 
-                &800 { .-weight, code { color: @red-200; } }
-                &900 { .-weight, code { color: @red-100; } }
+                &700, &800, &900 { .-weight, code { color: @red-200; } }
             }
+        }
+        .fog {
+            background-color: @fog;
+            > header {
+                border: 1px solid @black-200;
+                border-radius: @borderRadius-base;
+            }
+            h3 { color: @black-800; }
+            td { color: @black-600; }
+        }
+        .badge-gold {
+            background-color: @badge-gold;
+            > header { border-radius: @borderRadius-base; }
+            .-title, td { color: @yellow-900; }
+        }
+        .badge-silver {
+            background-color: @badge-silver;
+            > header { border-radius: @borderRadius-base; }
+            .-title, td { color: @black-800; }
+        }
+        .badge-bronze {
+            background-color: @badge-bronze;
+            > header { border-radius: @borderRadius-base; }
+            .-title, td { color: @orange-900; }
+        }
+        .code-black {
+            background-color: @code-black;
+            > header { border-radius: @borderRadius-base; }
+            .-title, td { color: @black-100; }
+        }
+        .code-silver {
+            background-color: @code-silver;
+            > header { border-radius: @borderRadius-base; }
+            .-title, td { color: @black-100; }
+        }
+        .code-navy {
+            background-color: @code-navy;
+            > header { border-radius: @borderRadius-base; }
+            .-title, td { color: @blue-100; }
+        }
+        .code-blue {
+            background-color: @code-blue;
+            > header { border-radius: @borderRadius-base; }
+            .-title, td { color: @blue-100; }
+        }
+        .code-powder {
+            background-color: @code-powder;
+            > header { border-radius: @borderRadius-base; }
+            .-title, td { color: @powder-900; }
+        }
+        .code-maroon {
+            background-color: @code-maroon;
+            > header { border-radius: @borderRadius-base; }
+            .-title, td { color: @red-100; }
+        }
+        .code-red {
+            background-color: @code-red;
+            > header { border-radius: @borderRadius-base; }
+            .-title, td { color: @red-900; }
         }
     }
 
@@ -656,38 +728,29 @@ ul.exampleCards {
 //  $6  Visual Library
 //  ----------------------------------------------------------------------------
 
-@color-amber:    hsl(37,100%,57%);
-@color-yellowBright:    hsl(46,100%,57%);
+@amber:    hsl(37,100%,57%);
+@yellowBright:    hsl(46,100%,57%);
 
-._background-orange {
-    background-color: @color-orange;
+._background {
+    &-orange        { background-color: @orange; }
+    &-yellowBright  { background-color: @yellowBright; }
+    &-amber         { background-color: @amber; }
+    &-grayLighter   { background-color: @backgroundColor-grayLighter; }
 }
 
-._background-yellowBright {
-    background-color: @color-yellowBright;
-}
+.visualGrid {
+    .-col3 { border: 1px solid @white; }
 
-._background-amber {
-    background-color: @color-amber;
-}
+    .-content {
+        height: 20em;
+        padding: 2em;
 
-._background-grayLighter {
-    background-color: @backgroundColor-grayLighter;
-}
-
-.visualGrid .-col3 {
-    border: 1px solid @color-white;
-}
-
-.visualGrid .-content {
-    height: 20em;
-    padding: 2em;
-
-    img {
-        margin: 0 auto;
-        display: block;
-        height: 100%;
-        max-width: 100%;
+        img {
+            margin: 0 auto;
+            display: block;
+            height: 100%;
+            max-width: 100%;
+        }
     }
 }
 

@@ -6,14 +6,15 @@
 //  TABLE OF CONTENTS
 //  • VARIABLES
 //  • BASE STYLES
+//  • ADDITIVE STYLES
 //
 //  ============================================================================
 //  $   VARIABLES
 //  ----------------------------------------------------------------------------
-@header-border:                 lighten(@header-page-border,2%);
-@header-page-border:            @gray-200;
-@header-title-color:            @gray-600;
-@header-page-title-color:       @orange-700;
+@header-border:                 @black-100;
+@header-page-border:            @black-200;
+@header-title-color:            @black-600;
+@header-page-title-color:       @orange-400;
 
 
 //  ============================================================================
@@ -78,7 +79,7 @@ header, .header {
                 margin-top: 0;
                 padding-top: @padding-double;
                 padding-bottom: @padding-base;
-                
+
                 //  This feels really fragile. Basically we only want the orange color
                 //  for "Section Titles" but I'm hesitant about creating a class just
                 //  yet for this. Let's so how far this takes us.

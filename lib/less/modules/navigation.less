@@ -14,16 +14,16 @@
 //  ============================================================================
 //  $ VARIABLES
 //  ----------------------------------------------------------------------------
-@nav-link-color:                        spin(desaturate(lighten(@color-grayMid,9%),7%),8);
-@nav-link_hover-color:                  spin(darken(@color-grayMid,14%),2);
-@nav-link-background:                   fade(@color-white,0%);
-@nav-link_hover-background:             desaturate(lighten(@color-grayMid,53%),6%);
-@nav-link_active-color:                 spin(darken(@color-grayMid,14%),2);
+@nav-link-color:                        @black-600;
+@nav-link_hover-color:                  @black-700;
+@nav-link-background:                   fade(@white,0%);
+@nav-link_hover-background:             @black-100;
+@nav-link_active-color:                 @nav-link_hover-color;
 @nav-link_active_hover-color:           darken(@nav-link_active-color,5%);
-@nav-link_active-background:            fade(@color-white,0%);
-@nav-link_active_hover-background:      desaturate(lighten(@color-grayMid,56%),10%);
-@nav-link_active-border:                spin(desaturate(lighten(@color-grayMid,9%),7%),8);
-@nav-link_active_hover-border:          spin(darken(@color-grayMid,14%),2);
+@nav-link_active-background:            fade(@white,0%);
+@nav-link_active_hover-background:      @nav-link_hover-background;
+@nav-link_active-border:                @black-200;
+@nav-link_active_hover-border:          @black-300;
 
 
 //  ----------------------------------------------------------------------------

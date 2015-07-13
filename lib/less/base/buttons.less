@@ -17,13 +17,13 @@
 //  ----------------------------------------------------------------------------
 //  $$  Disabled Button
 //  --  Default State
-@btn_disabled-background:                          @gray-200;
-@btn_disabled-border:                              @gray-300;
+@btn_disabled-background:                          @black-200;
+@btn_disabled-border:                              @black-300;
 @btn_disabled-shadowDrop:                          fade(@white,0%);
 @btn_disabled-shadowInner:                         fade(@white,50%);
 @btn_disabled-color:                               @white;
 //  --  Hover State
-@btn_disabled_hover-background:                    @gray-300;
+@btn_disabled_hover-background:                    @black-300;
 @btn_disabled_hover-border:                        darken(@btn_disabled-border,5%);
 @btn_disabled_hover-shadowDrop:                    @btn_disabled-shadowDrop;
 @btn_disabled_hover-shadowInner:                   @btn_disabled-shadowInner;
@@ -47,15 +47,15 @@
 //  ----------------------------------------------------------------------------
 //  $$  Secondary Button
 //  - Default State
-@btn_secondary-background:                         lighten(@azure-100,5%);
-@btn_secondary-border:                             @azure-300;
+@btn_secondary-background:                         @powder-50;
+@btn_secondary-border:                             @powder-300;
 @btn_secondary-shadowDrop:                         fade(@white,0%);
-@btn_secondary-shadowInner:                        lighten(@azure-100,10%);
+@btn_secondary-shadowInner:                        @btn_secondary-shadowDrop;
 @btn_secondary-color:                              @blue-700;
 //  - Hover State
-@btn_secondary_hover-background:                   lighten(@azure-100,3%);
-@btn_secondary_hover-border:                       @azure-400;
-@btn_secondary_hover-shadowDrop:                   fade(@azure-500,20%);
+@btn_secondary_hover-background:                   @powder-50;
+@btn_secondary_hover-border:                       @powder-400;
+@btn_secondary_hover-shadowDrop:                   @powder-300;
 @btn_secondary_hover-shadowInner:                  fade(@white,0%);
 @btn_secondary_hover-color:                        darken(@btn_secondary-color,5%);
 
@@ -68,18 +68,18 @@
 @btn_outlined-shadowInner:                         fade(@white,0%);
 @btn_outlined-color:                               @blue-700;
 //  - Hover State
-@btn_outlined_hover-background:                    fade(@blue-100,50%);
+@btn_outlined_hover-background:                    @blue-50;
 @btn_outlined_hover-border:                        darken(@btn_outlined-border,3%);
-@btn_outlined_hover-shadowDrop:                    fade(@blue-100,20%);
-@btn_outlined_hover-shadowInner:                   fade(@color-white,0%);
+@btn_outlined_hover-shadowDrop:                    @blue-50;
+@btn_outlined_hover-shadowInner:                   fade(@white,0%);
 @btn_outlined_hover-color:                         darken(@btn_outlined-color,5%);
 //  -- Disabled
 @btn_outlined_disabled-background:                 @white;
 @btn_outlined_disabled-border:                     @btn_disabled-border;
 @btn_outlined_disabled-shadowDrop:                 fade(@white,0%);
 @btn_outlined_disabled-shadowInner:                @btn_disabled-shadowInner;
-@btn_outlined_disabled-color:                      @gray-300;
-@btn_outlined_disabled_hover-background:           @gray-100;
+@btn_outlined_disabled-color:                      @black-300;
+@btn_outlined_disabled_hover-background:           @black-100;
 @btn_outlined_disabled_hover-border:               @btn_disabled_hover-border;
 @btn_outlined_disabled_hover-shadowDrop:           @btn_disabled_hover-shadowDrop;
 @btn_outlined_disabled_hover-shadowInner:          @btn_disabled_hover-shadowInner;
@@ -125,11 +125,11 @@
 @btn_clear_hover-shadowInner:                      @btn_clear-shadowInner;
 @btn_clear_hover-color:                            darken(@btn_clear-color,5%);
 //  -- Disabled
-@btn_clear_disabled-background:                    @gray-200;
+@btn_clear_disabled-background:                    @black-200;
 @btn_clear_disabled-border:                        fade(@white,0%);
 @btn_clear_disabled-shadowDrop:                    fade(@white,0%);
 @btn_clear_disabled-shadowInner:                   fade(@white,0%);
-@btn_clear_disabled-color:                         @gray-400;
+@btn_clear_disabled-color:                         @black-400;
 @btn_clear_disabled_hover-background:              darken(@btn_clear_disabled-background,5%);
 @btn_clear_disabled_hover-border:                  @btn_clear_disabled-border;
 @btn_clear_disabled_hover-shadowDrop:              @btn_clear_disabled-shadowDrop;
@@ -164,15 +164,15 @@
 //  ----------------------------------------------------------------------------
 //  $$ Confirmation Button
 //  - Default State
-@btn_confirm-background:                           @green-700;
-@btn_confirm-border:                               @green-800;
+@btn_confirm-background:                           @green-400;
+@btn_confirm-border:                               @green-500;
 @btn_confirm-shadowDrop:                           fade(@white,0%);
-@btn_confirm-shadowInner:                          fade(@green-500,75%);
-@btn_confirm-color:                                lighten(@green-100,5%);
+@btn_confirm-shadowInner:                          @green-100;
+@btn_confirm-color:                                @green-50;
 //  - Hover State
-@btn_confirm_hover-background:                     darken(@btn_confirm-background,3%);
+@btn_confirm_hover-background:                     darken(@btn_confirm-background,5%);
 @btn_confirm_hover-border:                         darken(@btn_confirm-border,5%);
-@btn_confirm_hover-shadowDrop:                     fade(@green-500,50%);
+@btn_confirm_hover-shadowDrop:                     @green-50;
 @btn_confirm_hover-shadowInner:                    fade(@btn_confirm-shadowInner,0%);
 @btn_confirm_hover-color:                          @white;
 
@@ -243,7 +243,7 @@ button,
         }
     }
 
-    &:visited { color: fadeout(@color-white, 10%); }
+    &:visited { color: fadeout(@white, 10%); }
 }
 
 // ---------------------------------------------------------------------------

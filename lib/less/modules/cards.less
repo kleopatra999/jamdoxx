@@ -14,16 +14,17 @@
 //  $ VARIABLES
 //  ----------------------------------------------------------------------------
 @card-background:                   @white;
-@card-border:                       @gray-200;
+@card-border:                       @black-200;
 @card-padding:                      ceil(@padding-double - @padding-half);
-@card-meta-color:                   @gray-400;
-@card-metaStrong-color:             @gray-600;
-@card-highlight-background:         fade(@gray-100,50%);
-@card-stats-color:                  @gray-600;
-@card-stats_small-color:            @gray-500;
+@card-meta-color:                   @black-400;
+@card-metaStrong-color:             @black-600;
+@card-highlight-background:         @black-50;
+@card-stats-color:                  @black-600;
+@card-stats_small-color:            @black-500;
 @card-pages-logo-border:            @white;
 @card-pages-cover-height:           120px;
 @card-pages-logo-size:              72px;
+@card-published-border:             @green-400;
 
 
 //  ============================================================================
@@ -233,7 +234,7 @@
         width: 0;
         height: 0;
         content: "";
-        border-top: 48px solid @green-600;
+        border-top: 48px solid @card-published-border;
         border-right: 50px solid transparent;
         z-index: @zindex-popover;
     }

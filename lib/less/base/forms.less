@@ -24,50 +24,50 @@
 @inputGroup-paddingLeft:            1.4em;
 
 //  -- Default Color Variables
-@label-copy:                        @color-grayDark;
-@input-background:                  @color-white;
-@input-background_disabled:         darken(@input-background,7%);
+@label-copy:                        @black-700;
+@input-background:                  @white;
+@input-background_disabled:         @black-100;
 @input-background_focused:          @input-background;
-@input-border:                      spin(desaturate(lighten(@color-grayMid,28%),9%),-26);
+@input-border:                      @black-300;
 @input-border_disabled:             fade(@input-border,50%);
 @input-border_hover:                fade(@input-border_focused,50%);
-@input-border_focused:              desaturate(lighten(@color-blue,3%),15%);
-@input-copy:                        @color-grayDark;
-@input-copy_disabled:               darken(@color-white,33%);
-@input-copy_placeholder:            fade(@color-grayDark,25%);
-@input-shadowDrop:                  fade(@color-white,100%);
-@input-shadowDrop_disabled:         fade(@color-white,100%);
+@input-border_focused:              @blue-500;
+@input-copy:                        @copy-color;
+@input-copy_disabled:               @black-300;
+@input-copy_placeholder:            @copy_muted-color;
+@input-shadowDrop:                  fade(@white,100%);
+@input-shadowDrop_disabled:         fade(@white,100%);
 @input-shadowDrop_hover:            fade(@input-shadowDrop_focused,20%);
-@input-shadowDrop_focused:          fade(@color-blue,50%);
-@input-shadowInner:                 fade(spin(desaturate(lighten(@color-grayMid,13%),7%),4),20%);
+@input-shadowDrop_focused:          fade(@blue-600,50%);
+@input-shadowInner:                 fade(@black-400,20%);
 @input-shadowInner_disabled:        fade-out(@input-shadowInner,10%);
 @input-shadowInner_hover:           darken(@input-shadowInner_focused,10%);
-@input-shadowInner_focused:         darken(@color-white,5%);
+@input-shadowInner_focused:         darken(@white,5%);
 
 //  -- Success Input Color Variables
-@input_success-border:              spin(saturate(darken(@color-green,21%),19%),-8);
-@input_success-border_hover:        fade(@input_success-border_focused,75%);
-@input_success-border_focused:      saturate(lighten(@input_success-border,6%),3%);
+@input_success-border:              @green-500;
+@input_success-border_hover:        darken(@input_success-border,5%);
+@input_success-border_focused:      @green-400;
 @input_success-shadowDrop_hover:    fade(@input_success-shadowDrop_focused,20%);
-@input_success-shadowDrop_focused:  fade(saturate(darken(@color-green,4%),5%),40%);
+@input_success-shadowDrop_focused:  fade(@green-500,40%);
 @input_success-shadowInner_hover:   darken(@input-shadowInner_focused,10%);
 @input_success-shadowInner_focused: @input-shadowInner_focused;
 
 //  -- Warning Input Color Variables
-@input_warning-border:              spin(darken(@color-yellow,21%),-5);
-@input_warning-border_hover:        fade(@input_warning-border_focused,75%);
-@input_warning-border_focused:      spin(desaturate(lighten(@color-yellow,3%),29%),-5);
+@input_warning-border:              @yellow-600;
+@input_warning-border_hover:        darken(@input_warning-border,5%);
+@input_warning-border_focused:      @yellow-500;
 @input_warning-shadowDrop_hover:    fade(@input_warning-shadowDrop_focused,20%);
-@input_warning-shadowDrop_focused:  fade(lighten(@input_warning-border,2%),25%);
+@input_warning-shadowDrop_focused:  fade(@yellow-600,25%);
 @input_warning-shadowInner_hover:   darken(@input-shadowInner_focused,10%);
 @input_warning-shadowInner_focused: @input-shadowInner_focused;
 
 //  -- Error Input Color Variables
-@input_error-border:                @color-red;
-@input_error-border_hover:          fade(@input_error-border_focused,75%);
-@input_error-border_focused:        saturate(lighten(@color-red,19%),25%);
+@input_error-border:                @red-600;
+@input_error-border_hover:          darken(@input_error-border,5%);
+@input_error-border_focused:        @red-500;
 @input_error-shadowDrop_hover:      fade(@input_error-shadowDrop_focused,20%);
-@input_error-shadowDrop_focused:    fade(@color-red,15%);
+@input_error-shadowDrop_focused:    fade(@red-600,25%);
 @input_error-shadowInner_hover:     darken(@input-shadowInner_focused,10%);
 @input_error-shadowInner_focused:   @input-shadowInner_focused;
 

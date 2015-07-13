@@ -16,23 +16,24 @@
 @tab-background:                    transparent;
 @tab-border:                        transparent;
 @tab-borderBottom:                  @borderColor-gray;
-@tab-color:                         @gray-500;
-@tab_hover-background:              @gray-100;
+@tab-color:                         @black-500;
+@tab_hover-background:              @black-100;
 @tab_hover-border:                  @tab_hover-background;
-@tab_hover-color:                   @gray-700;
+@tab_hover-color:                   @black-700;
 
 @tab_selected-background:           @white;
 @tab_selected-borderTop:            @orange-700;
 @tab_selected-borderBottom:         @tab_selected-background;
 @tab_selected-border:               @tab-borderBottom;
-@tab_selected-color:                @gray-800;
+@tab_selected-color:                @black-800;
 @tab_selected_hover-background:     @tab_selected-background;
 @tab_selected_hover-border:         @tab_selected-border;
 @tab_selected_hover-color:          darken(@tab_selected-color,5%);
 
 @tabBoard-background:               fade(@white,0%);
 @tabBoard-border:                   fade(@white,0%);
-@tabBoard-color:                    @gray-500;
+@tabBoard-color:                    @black-500;
+@tabBoard-color_large:              @black-800;
 @tabBoard-success-color:            @green-700;
 @tabBoard-warning-color:            @red-700;
 @tabBoard_selected-borderBottom:    @orange-700;
@@ -115,9 +116,9 @@
     // --  Little number notice
     .notice {
         padding: 1px 0.25em;
-        background-color: @color-orange;
+        background-color: @orange-400;
         border-radius: @borderRadius-base;
-        color: @color-white;
+        color: @white;
     }
 
     &-borderBottom {
@@ -227,7 +228,7 @@
 
         &._large {
             margin-bottom: 7px;
-            color: @color-grayDark;
+            color: @tabBoard-color_large;
             .fontSize(xxl);
             letter-spacing: -1px;            
         }
