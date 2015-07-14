@@ -18,13 +18,13 @@
 //  $$  Disabled Button
 //  --  Default State
 @btn_disabled-background:                          @black-200;
-@btn_disabled-border:                              @black-300;
+@btn_disabled-border:                              @btn_disabled-background;
 @btn_disabled-shadowDrop:                          fade(@white,0%);
 @btn_disabled-shadowInner:                         fade(@white,50%);
 @btn_disabled-color:                               @white;
 //  --  Hover State
 @btn_disabled_hover-background:                    @black-300;
-@btn_disabled_hover-border:                        darken(@btn_disabled-border,5%);
+@btn_disabled_hover-border:                        @btn_disabled_hover-background;
 @btn_disabled_hover-shadowDrop:                    @btn_disabled-shadowDrop;
 @btn_disabled_hover-shadowInner:                   @btn_disabled-shadowInner;
 @btn_disabled_hover-color:                         @btn_disabled-color;
@@ -32,46 +32,46 @@
 //  ----------------------------------------------------------------------------
 //  $$  Primary Button
 //  - Default State
-@btn_primary-background:                           @blue-700;
-@btn_primary-border:                               @blue-800;
+@btn_primary-background:                           @blue-500;
+@btn_primary-border:                               @btn_primary-background;
 @btn_primary-shadowDrop:                           fade(@white,0%);
-@btn_primary-shadowInner:                          @blue-500;
-@btn_primary-color:                                lighten(@blue-100,5%);
+@btn_primary-shadowInner:                          @btn_primary-background;
+@btn_primary-color:                                @white;
 //  - Hover State
 @btn_primary_hover-background:                     darken(@btn_primary-background,5%);
-@btn_primary_hover-border:                         darken(@btn_primary-border,5%);
-@btn_primary_hover-shadowDrop:                     fade(@blue,20%);
-@btn_primary_hover-shadowInner:                    fade(@white,0%);
-@btn_primary_hover-color:                          @white;
+@btn_primary_hover-border:                         @btn_primary_hover-background;
+@btn_primary_hover-shadowDrop:                     @btn_primary-shadowDrop;
+@btn_primary_hover-shadowInner:                    @btn_primary-shadowInner;
+@btn_primary_hover-color:                          @blue-50;
 
 //  ----------------------------------------------------------------------------
 //  $$  Secondary Button
 //  - Default State
 @btn_secondary-background:                         @powder-50;
-@btn_secondary-border:                             @powder-300;
+@btn_secondary-border:                             @powder-200;
 @btn_secondary-shadowDrop:                         fade(@white,0%);
 @btn_secondary-shadowInner:                        @btn_secondary-shadowDrop;
-@btn_secondary-color:                              @blue-700;
+@btn_secondary-color:                              @blue-600;
 //  - Hover State
-@btn_secondary_hover-background:                   @powder-50;
-@btn_secondary_hover-border:                       @powder-400;
-@btn_secondary_hover-shadowDrop:                   @powder-300;
-@btn_secondary_hover-shadowInner:                  fade(@white,0%);
+@btn_secondary_hover-background:                   darken(@btn_secondary-background,2%);
+@btn_secondary_hover-border:                       darken(@btn_secondary-border,5%);
+@btn_secondary_hover-shadowDrop:                   @btn_secondary-shadowDrop;
+@btn_secondary_hover-shadowInner:                  @btn_secondary-shadowInner;
 @btn_secondary_hover-color:                        darken(@btn_secondary-color,5%);
 
 //  ----------------------------------------------------------------------------
 //  $$ Outlined Button
 //  - Default State
 @btn_outlined-background:                          fade(@blue-100,0%);
-@btn_outlined-border:                              @blue-700;
-@btn_outlined-shadowDrop:                          fade(@blue-700,0%);
+@btn_outlined-border:                              @blue-500;
+@btn_outlined-shadowDrop:                          fade(@blue-300,0%);
 @btn_outlined-shadowInner:                         fade(@white,0%);
-@btn_outlined-color:                               @blue-700;
+@btn_outlined-color:                               @blue-600;
 //  - Hover State
-@btn_outlined_hover-background:                    @blue-50;
+@btn_outlined_hover-background:                    fade(@btn_outlined-background,25%);
 @btn_outlined_hover-border:                        darken(@btn_outlined-border,3%);
-@btn_outlined_hover-shadowDrop:                    @blue-50;
-@btn_outlined_hover-shadowInner:                   fade(@white,0%);
+@btn_outlined_hover-shadowDrop:                    @btn_outlined-shadowDrop;
+@btn_outlined_hover-shadowInner:                   @btn_outlined-shadowInner;
 @btn_outlined_hover-color:                         darken(@btn_outlined-color,5%);
 //  -- Disabled
 @btn_outlined_disabled-background:                 @white;
@@ -87,28 +87,28 @@
 
 // -- Variations: Warning
 //  - Default State
-@btn_outlined_warning-background:                   @btn_outlined-background;
-@btn_outlined_warning-border:                       @red-500;
-@btn_outlined_warning-shadowDrop:                   @btn_outlined-shadowDrop;
-@btn_outlined_warning-shadowInner:                  @btn_outlined-shadowInner;
-@btn_outlined_warning-color:                        @red-700;
+@btn_outlined_danger-background:                   @btn_outlined-background;
+@btn_outlined_danger-border:                       @red-200;
+@btn_outlined_danger-shadowDrop:                   @btn_outlined-shadowDrop;
+@btn_outlined_danger-shadowInner:                  @btn_outlined-shadowInner;
+@btn_outlined_danger-color:                        @red-600;
 //  - Hover State
-@btn_outlined_warning_hover-background:             @red-100;
-@btn_outlined_warning_hover-border:                 @btn_warning-border;
-@btn_outlined_warning_hover-shadowDrop:             @red-100;
-@btn_outlined_warning_hover-shadowInner:            @btn_outlined_hover-shadowInner;
-@btn_outlined_warning_hover-color:                  darken(@btn_outlined_warning-color,5%);
+@btn_outlined_danger_hover-background:             @red-50;
+@btn_outlined_danger_hover-border:                 @btn_danger-border;
+@btn_outlined_danger_hover-shadowDrop:             @btn_outlined_danger-shadowDrop;
+@btn_outlined_danger_hover-shadowInner:            @btn_outlined_hover-shadowInner;
+@btn_outlined_danger_hover-color:                  darken(@btn_outlined_danger-color,5%);
 //  -- Disabled
-@btn_outlined_warning_disabled-background:          @btn_outlined_disabled-background;
-@btn_outlined_warning_disabled-border:              @btn_outlined_disabled-border;
-@btn_outlined_warning_disabled-shadowDrop:          @btn_outlined_disabled-shadowDrop;
-@btn_outlined_warning_disabled-shadowInner:         @btn_outlined_disabled-shadowInner;
-@btn_outlined_warning_disabled-color:               @btn_outlined_disabled-color;
-@btn_outlined_warning_disabled_hover-background:    @btn_outlined_disabled_hover-background;
-@btn_outlined_warning_disabled_hover-border:        @btn_outlined_disabled_hover-border;
-@btn_outlined_warning_disabled_hover-shadowDrop:    @btn_outlined_disabled_hover-shadowDrop;
-@btn_outlined_warning_disabled_hover-shadowInner:   @btn_outlined_disabled_hover-shadowInner;
-@btn_outlined_warning_disabled_hover-color:         @btn_outlined_disabled_hover-color;
+@btn_outlined_danger_disabled-background:          @btn_outlined_disabled-background;
+@btn_outlined_danger_disabled-border:              @btn_outlined_disabled-border;
+@btn_outlined_danger_disabled-shadowDrop:          @btn_outlined_disabled-shadowDrop;
+@btn_outlined_danger_disabled-shadowInner:         @btn_outlined_disabled-shadowInner;
+@btn_outlined_danger_disabled-color:               @btn_outlined_disabled-color;
+@btn_outlined_danger_disabled_hover-background:    @btn_outlined_disabled_hover-background;
+@btn_outlined_danger_disabled_hover-border:        @btn_outlined_disabled_hover-border;
+@btn_outlined_danger_disabled_hover-shadowDrop:    @btn_outlined_disabled_hover-shadowDrop;
+@btn_outlined_danger_disabled_hover-shadowInner:   @btn_outlined_disabled_hover-shadowInner;
+@btn_outlined_danger_disabled_hover-color:         @btn_outlined_disabled_hover-color;
 
 //  ----------------------------------------------------------------------------
 //  $$ Clear Button
@@ -117,79 +117,79 @@
 @btn_clear-border:                                 fade(@white,0%);
 @btn_clear-shadowDrop:                             fade(@white,0%);
 @btn_clear-shadowInner:                            fade(@white,0%);
-@btn_clear-color:                                  @blue-700;
+@btn_clear-color:                                  @blue-600;
 //  - Hover State
-@btn_clear_hover-background:                       @blue-100;
+@btn_clear_hover-background:                       fade(@blue-100,25%);
 @btn_clear_hover-border:                           @btn_clear-border;
 @btn_clear_hover-shadowDrop:                       @btn_clear-shadowDrop;
 @btn_clear_hover-shadowInner:                      @btn_clear-shadowInner;
 @btn_clear_hover-color:                            darken(@btn_clear-color,5%);
 //  -- Disabled
-@btn_clear_disabled-background:                    @black-200;
+@btn_clear_disabled-background:                    @black-100;
 @btn_clear_disabled-border:                        fade(@white,0%);
 @btn_clear_disabled-shadowDrop:                    fade(@white,0%);
 @btn_clear_disabled-shadowInner:                   fade(@white,0%);
-@btn_clear_disabled-color:                         @black-400;
+@btn_clear_disabled-color:                         @black-500;
 @btn_clear_disabled_hover-background:              darken(@btn_clear_disabled-background,5%);
 @btn_clear_disabled_hover-border:                  @btn_clear_disabled-border;
 @btn_clear_disabled_hover-shadowDrop:              @btn_clear_disabled-shadowDrop;
 @btn_clear_disabled_hover-shadowInner:             @btn_clear_disabled-shadowInner;
-@btn_clear_disabled_hover-color:                   darken(@btn_clear_disabled-color,5%);
+@btn_clear_disabled_hover-color:                   @black-600;
 
 // -- Variations: Warning
 //  - Default State
-@btn_clear_warning-background:                      @btn_clear-background;
-@btn_clear_warning-border:                          @btn_clear-border;
-@btn_clear_warning-shadowDrop:                      @btn_clear-shadowDrop;
-@btn_clear_warning-shadowInner:                     @btn_clear-shadowInner;
-@btn_clear_warning-color:                           @red-700;
+@btn_clear_danger-background:                      @btn_clear-background;
+@btn_clear_danger-border:                          @btn_clear-border;
+@btn_clear_danger-shadowDrop:                      @btn_clear-shadowDrop;
+@btn_clear_danger-shadowInner:                     @btn_clear-shadowInner;
+@btn_clear_danger-color:                           @red-600;
 //  - Hover State
-@btn_clear_warning_hover-background:                @red-100;
-@btn_clear_warning_hover-border:                    @btn_clear_warning-border;
-@btn_clear_warning_hover-shadowDrop:                @btn_clear_warning-shadowDrop;
-@btn_clear_warning_hover-shadowInner:               @btn_clear_warning-shadowInner;
-@btn_clear_warning_hover-color:                     darken(@btn_clear_warning-color,5%);
+@btn_clear_danger_hover-background:                @red-50;
+@btn_clear_danger_hover-border:                    @btn_clear_danger-border;
+@btn_clear_danger_hover-shadowDrop:                @btn_clear_danger-shadowDrop;
+@btn_clear_danger_hover-shadowInner:               @btn_clear_danger-shadowInner;
+@btn_clear_danger_hover-color:                     darken(@btn_clear_danger-color,5%);
 //  -- Disabled
-@btn_clear_warning_disabled-background:             @btn_clear_disabled-background;
-@btn_clear_warning_disabled-border:                 @btn_clear_disabled-border;
-@btn_clear_warning_disabled-shadowDrop:             @btn_clear_disabled-shadowDrop;
-@btn_clear_warning_disabled-shadowInner:            @btn_clear_disabled-shadowInner;
-@btn_clear_warning_disabled-color:                  @btn_clear_disabled-color;
-@btn_clear_warning_disabled_hover-background:       @btn_clear_disabled_hover-background;
-@btn_clear_warning_disabled_hover-border:           @btn_clear_disabled_hover-border;
-@btn_clear_warning_disabled_hover-shadowDrop:       @btn_clear_disabled_hover-shadowDrop;
-@btn_clear_warning_disabled_hover-shadowInner:      @btn_clear_disabled_hover-shadowInner;
-@btn_clear_warning_disabled_hover-color:            @btn_clear_disabled_hover-color;
+@btn_clear_danger_disabled-background:             @btn_clear_disabled-background;
+@btn_clear_danger_disabled-border:                 @btn_clear_disabled-border;
+@btn_clear_danger_disabled-shadowDrop:             @btn_clear_disabled-shadowDrop;
+@btn_clear_danger_disabled-shadowInner:            @btn_clear_disabled-shadowInner;
+@btn_clear_danger_disabled-color:                  @btn_clear_disabled-color;
+@btn_clear_danger_disabled_hover-background:       @btn_clear_disabled_hover-background;
+@btn_clear_danger_disabled_hover-border:           @btn_clear_disabled_hover-border;
+@btn_clear_danger_disabled_hover-shadowDrop:       @btn_clear_disabled_hover-shadowDrop;
+@btn_clear_danger_disabled_hover-shadowInner:      @btn_clear_disabled_hover-shadowInner;
+@btn_clear_danger_disabled_hover-color:            @btn_clear_disabled_hover-color;
 
 //  ----------------------------------------------------------------------------
 //  $$ Confirmation Button
 //  - Default State
 @btn_confirm-background:                           @green-400;
-@btn_confirm-border:                               @green-500;
+@btn_confirm-border:                               @btn_confirm-background;
 @btn_confirm-shadowDrop:                           fade(@white,0%);
-@btn_confirm-shadowInner:                          @green-100;
-@btn_confirm-color:                                @green-50;
+@btn_confirm-shadowInner:                          @btn_confirm-background;
+@btn_confirm-color:                                @white;
 //  - Hover State
 @btn_confirm_hover-background:                     darken(@btn_confirm-background,5%);
-@btn_confirm_hover-border:                         darken(@btn_confirm-border,5%);
-@btn_confirm_hover-shadowDrop:                     @green-50;
+@btn_confirm_hover-border:                         @btn_confirm_hover-background;
+@btn_confirm_hover-shadowDrop:                     @btn_confirm-shadowDrop;
 @btn_confirm_hover-shadowInner:                    fade(@btn_confirm-shadowInner,0%);
-@btn_confirm_hover-color:                          @white;
+@btn_confirm_hover-color:                          lighten(@green-50,3%);
 
 //  ----------------------------------------------------------------------------
 //  $$ Warning Button
 //  - Default State
-@btn_warning-background:                            @red-700;
-@btn_warning-border:                                @red-800;
-@btn_warning-shadowDrop:                            fade(@red-500,0%);
-@btn_warning-shadowInner:                           @red-500;
-@btn_warning-color:                                 lighten(@red-100,5%);
+@btn_danger-background:                            @red-500;
+@btn_danger-border:                                @btn_danger-background;
+@btn_danger-shadowDrop:                            fade(@btn_danger-background,0%);
+@btn_danger-shadowInner:                           @btn_danger-background;
+@btn_danger-color:                                 @white;
 //  - Hover State
-@btn_warning_hover-background:                      darken(@btn_warning-background,5%);
-@btn_warning_hover-border:                          darken(@btn_warning-border,5%);
-@btn_warning_hover-shadowDrop:                      fade(@btn_warning-shadowDrop,50%);
-@btn_warning_hover-shadowInner:                     fade(@btn_warning-shadowInner,0%);
-@btn_warning_hover-color:                           @white;
+@btn_danger_hover-background:                      darken(@btn_danger-background,5%);
+@btn_danger_hover-border:                          darken(@btn_danger-border,5%);
+@btn_danger_hover-shadowDrop:                      @btn_danger-shadowDrop;
+@btn_danger_hover-shadowInner:                     fade(@btn_danger-shadowInner,0%);
+@btn_danger_hover-color:                           lighten(@red-50,3%);
 
 
 // ===========================================================================
@@ -315,80 +315,80 @@ button,
         &[disabled], &._disabled { &:extend(.btn._disabled all); }
     }
     //  -- Warning Button
-    &._warning {
-        color: @btn_warning-color;
-        background-color: @btn_warning-background;
-        border-color: @btn_warning-border;
-        box-shadow: inset 0 1px 0 @btn_warning-shadowInner, 0 0 0 @btn_warning-shadowDrop;
+    &._danger {
+        color: @btn_danger-color;
+        background-color: @btn_danger-background;
+        border-color: @btn_danger-border;
+        box-shadow: inset 0 1px 0 @btn_danger-shadowInner, 0 0 0 @btn_danger-shadowDrop;
         
         &:hover, &._hover,
         &:active, &._active {
-            color: @btn_warning_hover-color;
-            background-color: @btn_warning_hover-background;
-            border-color: @btn_warning_hover-border;
-            box-shadow: inset 0 1px 0 @btn_warning_hover-shadowInner, 0 0 10px @btn_warning_hover-shadowDrop;
+            color: @btn_danger_hover-color;
+            background-color: @btn_danger_hover-background;
+            border-color: @btn_danger_hover-border;
+            box-shadow: inset 0 1px 0 @btn_danger_hover-shadowInner, 0 0 10px @btn_danger_hover-shadowDrop;
         }
         // Unfortunately we need to redeclare disabled states.
         &[disabled], &._disabled { &:extend(.btn._disabled all); }
 
         //  -- Variations: Outlined
         &._outlined {
-            color: @btn_outlined_warning-color;
-            background-color: @btn_outlined_warning-background;
-            border-color: @btn_outlined_warning-border;
-            box-shadow: inset 0 1px 0 @btn_outlined_warning-shadowInner, 0 0 0 @btn_outlined_warning-shadowDrop;
+            color: @btn_outlined_danger-color;
+            background-color: @btn_outlined_danger-background;
+            border-color: @btn_outlined_danger-border;
+            box-shadow: inset 0 1px 0 @btn_outlined_danger-shadowInner, 0 0 0 @btn_outlined_danger-shadowDrop;
             .fontWeight(4);
 
             &:hover, &._hover,
             &:active, &._active {
-                color: @btn_outlined_warning_hover-color;
-                background-color: @btn_outlined_warning_hover-background;
-                border-color: @btn_outlined_warning_hover-border;
-                box-shadow: inset 0 1px 0 @btn_outlined_warning_hover-shadowInner, 0 0 10px @btn_outlined_warning_hover-shadowDrop;
+                color: @btn_outlined_danger_hover-color;
+                background-color: @btn_outlined_danger_hover-background;
+                border-color: @btn_outlined_danger_hover-border;
+                box-shadow: inset 0 1px 0 @btn_outlined_danger_hover-shadowInner, 0 0 10px @btn_outlined_danger_hover-shadowDrop;
             }
             &[disabled], &._disabled {
-                color: @btn_outlined_warning_disabled-color;
-                background-color: @btn_outlined_warning_disabled-background;
-                border-color: @btn_outlined_warning_disabled-border;
-                box-shadow: inset 0 0 0 @btn_outlined_warning_disabled-shadowInner;
+                color: @btn_outlined_danger_disabled-color;
+                background-color: @btn_outlined_danger_disabled-background;
+                border-color: @btn_outlined_danger_disabled-border;
+                box-shadow: inset 0 0 0 @btn_outlined_danger_disabled-shadowInner;
                 cursor: not-allowed !important;
 
                 &:hover, &._hover,
                 &:active, &._active {
-                    color: @btn_outlined_warning_disabled_hover-color;
-                    background-color: @btn_outlined_warning_disabled_hover-background;
-                    border-color: @btn_outlined_warning_disabled_hover-border;
-                    box-shadow: inset 0 0 0 @btn_outlined_warning_disabled_hover-shadowInner, 0 0 0 @btn_outlined_warning_disabled_hover-shadowDrop;
+                    color: @btn_outlined_danger_disabled_hover-color;
+                    background-color: @btn_outlined_danger_disabled_hover-background;
+                    border-color: @btn_outlined_danger_disabled_hover-border;
+                    box-shadow: inset 0 0 0 @btn_outlined_danger_disabled_hover-shadowInner, 0 0 0 @btn_outlined_danger_disabled_hover-shadowDrop;
                 }
             }
         }
         //  -- Variations: Clear
         &._clear {
-            color: @btn_clear_warning-color;
-            background-color: @btn_clear_warning-background;
-            border-color: @btn_clear_warning-border;
-            box-shadow: inset 0 1px 0 @btn_clear_warning-shadowInner, 0 0 0 @btn_clear_warning-shadowDrop;
+            color: @btn_clear_danger-color;
+            background-color: @btn_clear_danger-background;
+            border-color: @btn_clear_danger-border;
+            box-shadow: inset 0 1px 0 @btn_clear_danger-shadowInner, 0 0 0 @btn_clear_danger-shadowDrop;
 
             &:hover, &._hover,
             &:active, &._active {
-                color: @btn_clear_warning_hover-color;
-                background-color: @btn_clear_warning_hover-background;
-                border-color: @btn_clear_warning_hover-border;
-                box-shadow: inset 0 1px 0 @btn_clear_warning_hover-shadowInner, 0 0 10px @btn_clear_warning_hover-shadowDrop;
+                color: @btn_clear_danger_hover-color;
+                background-color: @btn_clear_danger_hover-background;
+                border-color: @btn_clear_danger_hover-border;
+                box-shadow: inset 0 1px 0 @btn_clear_danger_hover-shadowInner, 0 0 10px @btn_clear_danger_hover-shadowDrop;
             }
             &[disabled], &._disabled {
-                color: @btn_clear_warning_disabled-color;
-                background-color: @btn_clear_warning_disabled-background;
-                border-color: @btn_clear_warning_disabled-border;
-                box-shadow: inset 0 0 0 @btn_clear_warning_disabled-shadowInner;
+                color: @btn_clear_danger_disabled-color;
+                background-color: @btn_clear_danger_disabled-background;
+                border-color: @btn_clear_danger_disabled-border;
+                box-shadow: inset 0 0 0 @btn_clear_danger_disabled-shadowInner;
                 cursor: not-allowed !important;
 
                 &:hover, &._hover,
                 &:active, &._active {
-                    color: @btn_clear_warning_disabled_hover-color;
-                    background-color: @btn_clear_warning_disabled_hover-background;
-                    border-color: @btn_clear_warning_disabled_hover-border;
-                    box-shadow: inset 0 0 0 @btn_clear_warning_disabled_hover-shadowInner, 0 0 0 @btn_clear_warning_disabled_hover-shadowDrop;
+                    color: @btn_clear_danger_disabled_hover-color;
+                    background-color: @btn_clear_danger_disabled_hover-background;
+                    border-color: @btn_clear_danger_disabled_hover-border;
+                    box-shadow: inset 0 0 0 @btn_clear_danger_disabled_hover-shadowInner, 0 0 0 @btn_clear_danger_disabled_hover-shadowDrop;
                 }
             }
         }
